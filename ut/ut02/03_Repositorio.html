@@ -90,6 +90,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#repositorios-en-git" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -583,6 +588,21 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    03. Repositorio
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="03_Repositorio.html" class="md-nav__link md-nav__link--active">
         
@@ -595,6 +615,52 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#la-carpeta-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      La carpeta .git
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repositorios-distribuidos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repositorios distribuidos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repositorios-remotos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repositorios remotos
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -854,9 +920,47 @@
 
 
 
-  <h1>03. Repositorio</h1>
-
-
+<h1 id="repositorios-en-git">Repositorios en Git<a class="headerlink" href="#repositorios-en-git" title="Permanent link">&para;</a></h1>
+<p>En <strong>Git</strong>, un repositorio es un <strong>proyecto de software</strong> (aplicación, web, documento, etc.) que está bajo control de versiones.<br />
+Físicamente, no es más que una <strong>carpeta en el sistema de archivos</strong> con el código fuente de la aplicación.  </p>
+<p>Cuando Git controla esa carpeta, todos los cambios quedan registrados y gestionados por el sistema.</p>
+<h2 id="la-carpeta-git">La carpeta <code>.git</code><a class="headerlink" href="#la-carpeta-git" title="Permanent link">&para;</a></h2>
+<p>Dentro de cada repositorio existe una carpeta <strong>oculta</strong> llamada <code>.git</code>.<br />
+Allí Git guarda todos los archivos necesarios para realizar el control de versiones.  </p>
+<ul>
+<li>Si se borra la carpeta <code>.git</code>:  </li>
+<li>El proyecto dejará de ser un repositorio Git.  </li>
+<li>Se perderá todo el historial de cambios y el control del repositorio.  </li>
+</ul>
+<h2 id="repositorios-distribuidos">Repositorios distribuidos<a class="headerlink" href="#repositorios-distribuidos" title="Permanent link">&para;</a></h2>
+<p>Git es un sistema de <strong>repositorios distribuidos</strong>.<br />
+Esto significa que cada desarrollador tiene en su ordenador una <strong>copia completa</strong> del repositorio, no solo los archivos actuales.  </p>
+<ul>
+<li>Cada copia (o <strong>clon</strong>) contiene:  </li>
+<li>Todos los archivos del proyecto.  </li>
+<li>Todo el historial de cambios.  </li>
+</ul>
+<p>Ventajas:<br />
+- Cada desarrollador puede trabajar de forma <strong>autónoma</strong> con su copia.<br />
+- No depende de conexión a Internet.<br />
+- En otros sistemas centralizados, es necesario estar conectado al servidor para trabajar.  </p>
+<h2 id="repositorios-remotos">Repositorios remotos<a class="headerlink" href="#repositorios-remotos" title="Permanent link">&para;</a></h2>
+<p>En la práctica, los equipos usan <strong>repositorios remotos</strong> alojados en servidores de Internet.<br />
+Estos permiten que todos los desarrolladores:<br />
+- Sincronicen sus cambios.<br />
+- Mantengan actualizado el proyecto.  </p>
+<p>Servicios más usados:<br />
+- <strong>GitHub</strong><br />
+- <strong>GitLab</strong><br />
+- <strong>Bitbucket</strong>  </p>
+<p>Beneficio principal:<br />
+- Si un repositorio local se pierde o se borra la carpeta <code>.git</code>, el proyecto sigue estando seguro en el repositorio remoto.<br />
+- En cualquier momento se puede volver a descargar mediante un <strong>clonado</strong> (<code>git clone</code>).  </p>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
 
 
 

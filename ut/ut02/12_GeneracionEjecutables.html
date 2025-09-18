@@ -90,6 +90,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#uso-de-ide-en-la-generacion-de-ejecutables" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -790,6 +795,21 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    12. Generación de ejecutables
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="12_GeneracionEjecutables.html" class="md-nav__link md-nav__link--active">
         
@@ -802,6 +822,52 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplo-practico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo práctico
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparativa-ide-vs-terminal-en-compilacion-y-ejecucion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparativa: IDE vs Terminal en compilación y ejecución
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#idea-clave" class="md-nav__link">
+    <span class="md-ellipsis">
+      Idea clave
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -854,9 +920,76 @@
 
 
 
-  <h1>12. Generación de ejecutables</h1>
-
-
+<h1 id="uso-de-ide-en-la-generacion-de-ejecutables">Uso de IDE en la generación de ejecutables<a class="headerlink" href="#uso-de-ide-en-la-generacion-de-ejecutables" title="Permanent link">&para;</a></h1>
+<p>El uso de <strong>IDE</strong> ha cambiado la forma de programar, ya que facilitan tanto la <strong>creación</strong> como la <strong>edición</strong> de programas.<br />
+Basta con abrir el proyecto o archivo y comenzar a escribir o modificar el código necesario.</p>
+<p>La gran ventaja aparece a la hora de <strong>generar los ficheros ejecutables</strong> directamente desde el IDE.</p>
+<p><a class="glightbox" href="../../img/ut02/ut02_4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="right" alt="Run Java" src="../../img/ut02/ut02_4.png" width="300px" /></a></p>
+<h2 id="ejemplo-practico">Ejemplo práctico<a class="headerlink" href="#ejemplo-practico" title="Permanent link">&para;</a></h2>
+<p>Un IDE nos permite generar ejecutables sin necesidad de usar la <strong>terminal</strong>.<br />
+En <strong>Visual Studio Code</strong>, por ejemplo, basta con pulsar el botón <strong>“Run Java”</strong> y el programa se compila y ejecuta automáticamente.</p>
+<p>Esto supone un gran avance porque:<br />
+- No necesitamos ejecutar manualmente los comandos en la terminal (ejemplo: <code>javac</code>).<br />
+- El IDE se encarga del proceso de compilación.<br />
+- Si ocurre algún error, el IDE lo muestra claramente en pantalla.  </p>
+<h2 id="comparativa-ide-vs-terminal-en-compilacion-y-ejecucion">Comparativa: IDE vs Terminal en compilación y ejecución<a class="headerlink" href="#comparativa-ide-vs-terminal-en-compilacion-y-ejecucion" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Aspecto</th>
+<th>Uso de IDE</th>
+<th>Uso de Terminal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Facilidad de uso</strong></td>
+<td>Muy sencillo, basta con un botón (ej. <em>Run Java</em>).</td>
+<td>Requiere escribir comandos manualmente.</td>
+</tr>
+<tr>
+<td><strong>Velocidad</strong></td>
+<td>Rápido: automatiza compilación y ejecución.</td>
+<td>Más lento: cada paso debe hacerse a mano.</td>
+</tr>
+<tr>
+<td><strong>Gestión de errores</strong></td>
+<td>Muestra errores en el propio editor, con resaltado y ayuda.</td>
+<td>Los errores aparecen en consola, hay que interpretarlos.</td>
+</tr>
+<tr>
+<td><strong>Aprendizaje</strong></td>
+<td>Permite centrarse en el código sin preocuparse por la compilación.</td>
+<td>Ayuda a entender cómo funciona realmente el proceso.</td>
+</tr>
+<tr>
+<td><strong>Flexibilidad</strong></td>
+<td>Limitado a las opciones del IDE.</td>
+<td>Total: se pueden usar parámetros y configuraciones avanzadas.</td>
+</tr>
+<tr>
+<td><strong>Productividad</strong></td>
+<td>Alta, ideal para proyectos grandes o en equipo.</td>
+<td>Menor, aunque útil en entornos simples.</td>
+</tr>
+<tr>
+<td><strong>Consumo de recursos</strong></td>
+<td>Mayor, ya que el IDE integra muchas funciones.</td>
+<td>Muy bajo, solo se necesita la terminal.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="idea-clave">Idea clave<a class="headerlink" href="#idea-clave" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>IDE</strong> → más cómodo, rápido y visual.  </li>
+<li><strong>Terminal</strong> → más flexible, ligero y formativo.  </li>
+</ul>
+<p>Lo ideal es <strong>aprender ambos</strong>: usar el IDE para el trabajo diario y la terminal para comprender y controlar mejor lo que ocurre “detrás de escena”.</p>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
 
 
 
