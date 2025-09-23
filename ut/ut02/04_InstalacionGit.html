@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
     
     
       
@@ -89,6 +89,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#instalacion-de-git" class="md-skip">
+          Saltar a contenido
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -606,6 +611,21 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    04. Instalación de Git
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="04_InstalacionGit.html" class="md-nav__link md-nav__link--active">
         
@@ -618,6 +638,79 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#instalar-git-en-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalar Git en Linux
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalar-git-en-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalar Git en Windows
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion-de-git-en-mac" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación de Git en Mac
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-inicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración inicial
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-de-un-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de un repositorio
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividades" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actividades
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -854,9 +947,79 @@
 
 
 
-  <h1>04. Instalación de Git</h1>
-
-
+<h1 id="instalacion-de-git">Instalación de Git<a class="headerlink" href="#instalacion-de-git" title="Permanent link">&para;</a></h1>
+<p>La instalación de Git es muy sencilla, de hecho, en la mayoría de las ocasiones se trata simplemente de instalarlo con el típico programa de instalación de software.</p>
+<div class="admonition danger">
+<p class="admonition-title">Antes de empezar</p>
+<p>Importante mencionar que el instalador de Git se debe descargar de la página oficial de Git. A partir de ahí, el proceso depende del sistema operativo con el que estemos trabajando. Para los sistemas más importantes es el siguiente.</p>
+</div>
+<h2 id="instalar-git-en-linux">Instalar Git en Linux<a class="headerlink" href="#instalar-git-en-linux" title="Permanent link">&para;</a></h2>
+<p>En el caso de Linux, la mayoría de distribuciones ya tienen Git instalado de manera predeterminada. No tenemos que hacer nada en concreto. En Linux o cualquier otro sistema donde quieras saber si Git ya está instalado es lanzar este comando:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span>    git --version
+</span></code></pre></div>
+<p>Si está instalado tendrás un mensaje con la versión disponible en tu sistema.</p>
+<h2 id="instalar-git-en-windows">Instalar Git en Windows<a class="headerlink" href="#instalar-git-en-windows" title="Permanent link">&para;</a></h2>
+<p>En Windows Git se instala por medio de un instalador. No hay más que seguir el asistente y tendremos ya disponible el comando <code>git</code> en nuestro terminal. Los usuarios de Windows durante la instalación de Git tienen la opción de instalar Git Bash, que es un programa de terminal de línea de comandos muy recomendable. </p>
+<div class="admonition note">
+<p class="admonition-title">Git Bash</p>
+<p>Git Bash es un terminal basado en Bash que por tanto tiene un juego de comandos como el de Linux. Es interesante instalarlo si te dedicas al desarrollo, ya que es mucho más adecuado que el terminal que viene instalado por defecto en Windows. </p>
+</div>
+<h2 id="instalacion-de-git-en-mac">Instalación de Git en Mac<a class="headerlink" href="#instalacion-de-git-en-mac" title="Permanent link">&para;</a></h2>
+<p>El instalador para Mac también se realiza mediante la descarga proporcionada en el sitio oficial. Aunque algunas versiones recientes de MacOS ya tienen Git disponible de casa.</p>
+<div class="admonition info">
+<p class="admonition-title">Otra manera</p>
+<p>Instalar Git con Homebrew Esto es un instalador de paquetes para MacOS muy útil, más tarde o temprano lo necesitarás para instalar muchas cosas. Una vez instalado Homebrew lanzas el comando</p>
+</div>
+<p>brew install git</p>
+<h2 id="configuracion-inicial">Configuración inicial<a class="headerlink" href="#configuracion-inicial" title="Permanent link">&para;</a></h2>
+<p>En el momento que acabamos de instalar Git es necesario realizar una primera configuración en la que informaremos a Git sobre quién somos y cuál es nuestro email, que usará para firmar las confirmaciones de código que realicemos.</p>
+<p>Para hacer esta configuración inicial debemos lanzar los comandos siguientes:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span>git config --global user.name &quot;Tu nombre&quot;
+</span><span id="__span-1-2"><span class="linenos" data-linenos="2 "></span>git config --global user.email &quot;tu_email@example.com&quot;
+</span></code></pre></div>
+<h2 id="creacion-de-un-repositorio">Creación de un repositorio<a class="headerlink" href="#creacion-de-un-repositorio" title="Permanent link">&para;</a></h2>
+<p>Para crear un repositorio Git desde cero, debemos partir de una carpeta vacía. Es por ello que mediante el terminal llegaremos al directorio que queramos. Estando situados en ella con el terminal de línea de comandos, se tiene que lanzar el comando:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span>git init
+</span></code></pre></div>
+<p>Eso hará que se cree dentro la subcarpeta <code>.git</code> y que la carpeta donde nos encontramos se convierta por tanto en un repositorio Git, pasando a estar controlada por el sistema de control de versiones.</p>
+<p>Si deseas empezar a controlar versiones de archivos existentes (a diferencia de un directorio vacío), probablemente deberías comenzar el seguimiento de esos archivos y hacer una confirmación inicial. Puedes conseguirlo con unos pocos comandos git add para especificar qué archivos quieres controlar, seguidos de un git commit para confirmar los cambios:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos="1 "></span>git add *
+</span><span id="__span-3-2"><span class="linenos" data-linenos="2 "></span>git add LICENSE
+</span><span id="__span-3-3"><span class="linenos" data-linenos="3 "></span>git commit -m &#39;initial project version&#39;
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Información sobre las licencias</p>
+<p>Los repositorios públicos de <a href="https://github.com">GitHub</a> se suelen utilizar para compartir software de código abierto. Para que tu repositorio sea verdaderamente de código abierto, tendrás que generarle una licencia. De este modo, las demás personas podrán usar, modificar y distribuir el software con libertad. Si quieres profundizar sobre este tema, está la web <a href="https://choosealicense.com">choosealicense.com</a>, pero ten en cuenta si subes tu repositorio a GitHub sin licencia otros usuarios pueden ver el repositorio y bifurcarlo (fork).</p>
+<p>La mayoría de los usuarios personas colocan el texto de su licencia en un archivo denominado LICENSE.txt (o bien LICENSE.md o LICENSE.rst) en la raíz del repositorio. Como buena práctica os animo a incluir el fichero de licencia en vuestros proyectos.</p>
+</div>
+<h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong><abbr title="Actividades de clase.">AC</abbr> 202</strong> (<abbr title="Optimiza código empleando las herramientas disponibles en el entorno de desarrollo.">RA4</abbr> / <abbr title="Se ha realizado el control de versiones integrado en el entorno de desarrollo.">CE4f</abbr> / <abbr title="Escala de valores.">IC1</abbr> /1p) Instala Git en tu maquina Linux/Windows/MacOs y configúralo teniendo en cuenta:</p>
+<ul>
+<li>Tu nombre y tu correo electrónico</li>
+<li>Que el editor predefinido sea vs code</li>
+<li>Activar el coloreado de la salida</li>
+<li>Mostrar el estado original en los conflictos</li>
+<li>Mostrar la configuración final</li>
+</ul>
+<p>Investiga y documenta el proceso.</p>
+</li>
+<li>
+<p><strong><abbr title="Actividades de clase.">AC</abbr> 203</strong> (<abbr title="Optimiza código empleando las herramientas disponibles en el entorno de desarrollo.">RA4</abbr> / <abbr title="Se ha realizado el control de versiones integrado en el entorno de desarrollo.">CE4f</abbr> / <abbr title="Escala de valores.">IC1</abbr> /1p) Crea un repositorio local y realiza los siguientes puntos:</p>
+<ul>
+<li>Crea un documento txt con tu nombre y apellido (haz captura)</li>
+<li>Añádelo al repositorio</li>
+<li>Muestra el estado del repositorio.</li>
+</ul>
+<p>Investiga y documenta el proceso.</p>
+</li>
+</ul>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
 
 
 
@@ -938,7 +1101,8 @@
   
 </div>
       
-        <div class="md-social">
+        
+<div class="md-social">
   
     
     
@@ -1006,10 +1170,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "toc.integrate", "navigation.indexes", "navigation.top", "navigation.tracking", "navigation.footer", "toc.follow", "content.tooltips", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "toc.integrate", "navigation.indexes", "navigation.top", "navigation.tracking", "navigation.footer", "toc.follow", "content.tooltips", "content.code.copy"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.50899def.min.js"></script>
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
