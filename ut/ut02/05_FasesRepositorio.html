@@ -689,7 +689,7 @@
         <li class="md-nav__item">
   <a href="#fase-2-staging-area" class="md-nav__link">
     <span class="md-ellipsis">
-      Fase 2: “Staging Area”
+      Fase 2: Staging Area
     </span>
   </a>
   
@@ -698,7 +698,7 @@
         <li class="md-nav__item">
   <a href="#fase-3-git-repository" class="md-nav__link">
     <span class="md-ellipsis">
-      Fase 3. “Git repository”
+      Fase 3: Git repository
     </span>
   </a>
   
@@ -942,15 +942,15 @@
 <li><em>Staged</em> </li>
 <li><em>Commited</em></li>
 </ul>
-<h2 id="fase-1-working-directory">Fase 1: Working Directory<a class="headerlink" href="#fase-1-working-directory" title="Permanent link">&para;</a></h2>
+<h2 id="fase-1-working-directory">Fase 1: <em>Working Directory</em><a class="headerlink" href="#fase-1-working-directory" title="Permanent link">&para;</a></h2>
 <p>Aquí es donde podemos hacer cualquier cambio y no afectar nuestro repositorio en lo absoluto.  En cuanto modificamos algo de nuestro código, éste tiene status de <em>modified</em>. Si ejecutamos el comando <code>git status</code>, nos mostrará qué archivos han sido modificados (o creados). </p>
 <p>Una vez que hemos hecho los cambios necesarios, pasamos nuestros archivos al <em>staging area</em> con el comando <code>git add</code>. Cuando pasas el código de <em>Working Directory</em> a <em>Staging Area</em>, cambias el estado del código de <em>modified</em> a <em>staged</em>. </p>
-<h2 id="fase-2-staging-area">Fase 2: “Staging Area”<a class="headerlink" href="#fase-2-staging-area" title="Permanent link">&para;</a></h2>
+<h2 id="fase-2-staging-area">Fase 2: <em>Staging Area</em><a class="headerlink" href="#fase-2-staging-area" title="Permanent link">&para;</a></h2>
 <p>Ws donde le podemos dar nombre a nuestra nueva versión. Y crear una “copia” de cómo quedaría nuestro repositorio en producción.  Para pasar nuestro código de <code>staging</code> area al <em>Git Repository</em> (todavía no se publica el código en Github), escribimos el siguiente comando: </p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span>git commit -m &#39;Mensaje de la confirmación&#39;
 </span></code></pre></div>
 <p>Nota que cuando haces el <em>commit</em> el código pasa de estado <em>staged</em> a <em>commited</em>. </p>
-<h2 id="fase-3-git-repository">Fase 3. “Git repository”<a class="headerlink" href="#fase-3-git-repository" title="Permanent link">&para;</a></h2>
+<h2 id="fase-3-git-repository">Fase 3: <em>Git repository</em><a class="headerlink" href="#fase-3-git-repository" title="Permanent link">&para;</a></h2>
 <p>Una vez que el código está confirmado, <em>committed</em>, ya está listo para sincronizarse con el servidor de Git. Para hacer esto, utilizamos <code>git push</code>. </p>
 <p>Si estás trabajando en un repositorio con varias personas en algún momento vas a querer descargar las cosas que tus compañeros agreguen o modifiquen. Para eso ejecutamos <code>git pull origin main</code>. </p>
 <h2 id="ciclo-de-vida-de-un-repositorio">Ciclo de vida de un repositorio<a class="headerlink" href="#ciclo-de-vida-de-un-repositorio" title="Permanent link">&para;</a></h2>
