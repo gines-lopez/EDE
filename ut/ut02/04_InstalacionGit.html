@@ -969,23 +969,24 @@
 <div class="admonition info">
 <p class="admonition-title">Otra manera</p>
 <p>Instalar Git con Homebrew Esto es un instalador de paquetes para MacOS muy útil, más tarde o temprano lo necesitarás para instalar muchas cosas. Una vez instalado Homebrew lanzas el comando</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span>brew install git
+</span></code></pre></div>
 </div>
-<p>brew install git</p>
 <h2 id="configuracion-inicial">Configuración inicial<a class="headerlink" href="#configuracion-inicial" title="Permanent link">&para;</a></h2>
 <p>En el momento que acabamos de instalar Git es necesario realizar una primera configuración en la que informaremos a Git sobre quién somos y cuál es nuestro email, que usará para firmar las confirmaciones de código que realicemos.</p>
 <p>Para hacer esta configuración inicial debemos lanzar los comandos siguientes:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span>git config --global user.name &quot;Tu nombre&quot;
-</span><span id="__span-1-2"><span class="linenos" data-linenos="2 "></span>git config --global user.email &quot;tu_email@example.com&quot;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span>git config --global user.name &quot;Tu nombre&quot;
+</span><span id="__span-2-2"><span class="linenos" data-linenos="2 "></span>git config --global user.email &quot;tu_email@example.com&quot;
 </span></code></pre></div>
 <h2 id="creacion-de-un-repositorio">Creación de un repositorio<a class="headerlink" href="#creacion-de-un-repositorio" title="Permanent link">&para;</a></h2>
 <p>Para crear un repositorio Git desde cero, debemos partir de una carpeta vacía. Es por ello que mediante el terminal llegaremos al directorio que queramos. Estando situados en ella con el terminal de línea de comandos, se tiene que lanzar el comando:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span>git init
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos="1 "></span>git init
 </span></code></pre></div>
 <p>Eso hará que se cree dentro la subcarpeta <code>.git</code> y que la carpeta donde nos encontramos se convierta por tanto en un repositorio Git, pasando a estar controlada por el sistema de control de versiones.</p>
 <p>Si deseas empezar a controlar versiones de archivos existentes (a diferencia de un directorio vacío), probablemente deberías comenzar el seguimiento de esos archivos y hacer una confirmación inicial. Puedes conseguirlo con unos pocos comandos git add para especificar qué archivos quieres controlar, seguidos de un git commit para confirmar los cambios:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos="1 "></span>git add *
-</span><span id="__span-3-2"><span class="linenos" data-linenos="2 "></span>git add LICENSE
-</span><span id="__span-3-3"><span class="linenos" data-linenos="3 "></span>git commit -m &#39;initial project version&#39;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span>git add *
+</span><span id="__span-4-2"><span class="linenos" data-linenos="2 "></span>git add LICENSE
+</span><span id="__span-4-3"><span class="linenos" data-linenos="3 "></span>git commit -m &#39;initial project version&#39;
 </span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Información sobre las licencias</p>
