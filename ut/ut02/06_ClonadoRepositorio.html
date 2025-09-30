@@ -90,6 +90,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#clonado-de-un-repositorio" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -652,6 +657,21 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    06. Clonado de un repositorio
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="06_ClonadoRepositorio.html" class="md-nav__link md-nav__link--active">
         
@@ -664,6 +684,61 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-clonar" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué es clonar?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comando-basico-de-clonado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comando básico de clonado
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clonar-en-una-carpeta-vacia-con-otro-nombre" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clonar en una carpeta vacía con otro nombre
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividades" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actividades
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -854,9 +929,60 @@
 
 
 
-  <h1>06. Clonado de un repositorio</h1>
-
-
+<h1 id="clonado-de-un-repositorio">Clonado de un repositorio<a class="headerlink" href="#clonado-de-un-repositorio" title="Permanent link">&para;</a></h1>
+<p>Cuando iniciamos un proyecto desde cero usamos el comando: git init Sin embargo, si queremos trabajar sobre un proyecto que ya existe (porque lo ha iniciado otra persona o porque lo subimos desde otro ordenador), necesitamos clonar el repositorio.</p>
+<h2 id="que-es-clonar">¿Qué es clonar?<a class="headerlink" href="#que-es-clonar" title="Permanent link">&para;</a></h2>
+<p>Clonar un repositorio significa descargar una copia completa de un repositorio remoto en nuestro ordenador. Esa copia contendrá todos los archivos y el historial de cambios del proyecto. A partir de ahí podremos trabajar en local: modificar código, hacer commits y después sincronizar con el repositorio remoto.</p>
+<h2 id="comando-basico-de-clonado">Comando básico de clonado<a class="headerlink" href="#comando-basico-de-clonado" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span>git clone https://github.com/usuario/nombre_repo.git
+</span></code></pre></div>
+<ul>
+<li>clone → orden para clonar.</li>
+<li>URL → dirección del repositorio remoto (se obtiene en GitHub, GitLab, Bitbucket…).</li>
+</ul>
+<p>Después de ejecutar el comando, se crea una carpeta con el nombre del repositorio que contiene todos los archivos del proyecto.</p>
+<h2 id="clonar-en-una-carpeta-vacia-con-otro-nombre">Clonar en una carpeta vacía con otro nombre<a class="headerlink" href="#clonar-en-una-carpeta-vacia-con-otro-nombre" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span>git clone https://github.com/usuario/nombre_repo.git .
+</span></code></pre></div>
+<p>El punto (.) indica “la carpeta actual” como destino del clon.</p>
+<div class="admonition danger">
+<p class="admonition-title">Importante</p>
+<div class="language-text highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>Si la carpeta no está vacía, Git mostrará un error.
+</code></pre></div>
+</div>
+<p>Por medio del clonado se accede a un repositorio remoto y se obtiene una copia del mismo, que se instala en una carpeta de nuestro ordenador. Una vez clonado podemos comenzar a trabajar con el repositorio realizando modificaciones en su código y confirmaciones (<em>commits</em>) en local.</p>
+<h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong><abbr title="Actividades de clase.">AC</abbr> 209</strong> (<abbr title="Optimiza código empleando las herramientas disponibles en el entorno de desarrollo.">RA4</abbr> / <abbr title="Se ha realizado el control de versiones integrado en el entorno de desarrollo.">CE4f</abbr> / <abbr title="Escala de valores.">IC1</abbr> /1p) Clona un repositorio remoto de GitHub en tu ordenador. Ten en cuenta:</p>
+<ul>
+<li>Selecciona un repositorio público sencillo (ejemplo: hola-mundo de GitHub).</li>
+<li>Usa el comando <code>git clone</code> indicando la URL.</li>
+<li>Comprueba que se crea la carpeta con el mismo nombre del repositorio.</li>
+<li>Accede a esa carpeta y muestra el historial de commits con <code>git log --oneline</code>.</li>
+<li>Explica con tus palabras qué diferencia hay entre <code>git init</code> y <code>git clone</code>.</li>
+</ul>
+<p>Entrega una captura de pantalla del proceso y un breve texto explicativo.</p>
+</li>
+<li>
+<p><strong><abbr title="Actividades de clase.">AC</abbr> 210</strong> (<abbr title="Optimiza código empleando las herramientas disponibles en el entorno de desarrollo.">RA4</abbr> / <abbr title="Se ha realizado el control de versiones integrado en el entorno de desarrollo.">CE4f</abbr> / <abbr title="Escala de valores.">IC1</abbr> /1p) Clona un repositorio remoto en una carpeta ya creada. Ten en cuenta:</p>
+<ul>
+<li>Crea una carpeta vacía con el nombre <code>mi-proyecto</code>.</li>
+<li>Sitúate en esa carpeta y utiliza el comando con punto final:
+  <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span>git clone https://github.com/usuario/nombre_repo.git .
+</span></code></pre></div></li>
+<li>Verifica que los archivos aparecen dentro de la carpeta <code>mi-proyecto</code>.</li>
+<li>Realiza un cambio en un archivo del repositorio clonado.</li>
+<li>Haz un <code>git status</code> y explica qué significa la salida.</li>
+</ul>
+<p>Entrega las capturas de pantalla y redacta una conclusión sobre por qué es importante que la carpeta esté vacía antes de clonar.</p>
+</li>
+</ul>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
 
 
 
