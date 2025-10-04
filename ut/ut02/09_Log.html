@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
     
     
       
@@ -89,6 +89,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#comando-git-log" class="md-skip">
+          Saltar a contenido
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -721,6 +726,21 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    09. Log
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="09_Log.html" class="md-nav__link md-nav__link--active">
         
@@ -733,6 +753,130 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#uso-basico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uso básico
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opciones-mas-utilizadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opciones más utilizadas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Opciones más utilizadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mostrar-solo-un-numero-determinado-de-confirmaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mostrar solo un número determinado de confirmaciones
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mostrar-historial-en-una-linea-por-commit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mostrar historial en una línea por commit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mostrar-estadisticas-de-archivos-modificados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mostrar estadísticas de archivos modificados
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mostrar-los-cambios-completos-parche" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mostrar los cambios completos (parche)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buscar-commits-por-autor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Buscar commits por autor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buscar-commits-por-texto-en-el-mensaje" class="md-nav__link">
+    <span class="md-ellipsis">
+      Buscar commits por texto en el mensaje
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mostrar-commits-entre-dos-puntos-del-historial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mostrar commits entre dos puntos del historial
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mostrar-el-historial-de-un-archivo-concreto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mostrar el historial de un archivo concreto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mostrar-grafico-del-historial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mostrar gráfico del historial
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -854,9 +998,60 @@
 
 
 
-  <h1>09. Log</h1>
-
-
+<h1 id="comando-git-log">Comando <code>git log</code><a class="headerlink" href="#comando-git-log" title="Permanent link">&para;</a></h1>
+<p>El comando <code>git log</code> muestra las <strong>instantáneas confirmadas</strong> (commits) en un repositorio. Permite ver el <strong>historial del proyecto</strong>, <strong>filtrar</strong> las confirmaciones y <strong>buscar cambios concretos</strong>.</p>
+<p>Mientras que <code>git status</code> sirve para revisar el estado actual del directorio de trabajo, <code>git log</code> se enfoca únicamente en el historial de cambios ya confirmados.</p>
+<h2 id="uso-basico">Uso básico<a class="headerlink" href="#uso-basico" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span>git log
+</span></code></pre></div>
+<p>Muestra el historial completo de confirmaciones en formato estándar.  </p>
+<ul>
+<li>Usa <strong>Espacio</strong> para avanzar una página.  </li>
+<li>Usa <strong>q</strong> para salir.</li>
+</ul>
+<h2 id="opciones-mas-utilizadas">Opciones más utilizadas<a class="headerlink" href="#opciones-mas-utilizadas" title="Permanent link">&para;</a></h2>
+<h3 id="mostrar-solo-un-numero-determinado-de-confirmaciones">Mostrar solo un número determinado de confirmaciones<a class="headerlink" href="#mostrar-solo-un-numero-determinado-de-confirmaciones" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span>git log -n &lt;límite&gt;
+</span></code></pre></div>
+<h3 id="mostrar-historial-en-una-linea-por-commit">Mostrar historial en una línea por commit<a class="headerlink" href="#mostrar-historial-en-una-linea-por-commit" title="Permanent link">&para;</a></h3>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span>git log --oneline
+</span></code></pre></div>
+Resumen rápido del historial, ideal para obtener una vista general.</p>
+<h3 id="mostrar-estadisticas-de-archivos-modificados">Mostrar estadísticas de archivos modificados<a class="headerlink" href="#mostrar-estadisticas-de-archivos-modificados" title="Permanent link">&para;</a></h3>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos="1 "></span>git log --stat
+</span></code></pre></div>
+Incluye el número de líneas añadidas o eliminadas en cada confirmación.</p>
+<h3 id="mostrar-los-cambios-completos-parche">Mostrar los cambios completos (parche)<a class="headerlink" href="#mostrar-los-cambios-completos-parche" title="Permanent link">&para;</a></h3>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span>git log -p
+</span></code></pre></div>
+Muestra las diferencias exactas entre cada commit y el anterior. Es la vista más detallada del historial.</p>
+<h3 id="buscar-commits-por-autor">Buscar commits por autor<a class="headerlink" href="#buscar-commits-por-autor" title="Permanent link">&para;</a></h3>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos="1 "></span>git log --author=&quot;&lt;nombre&gt;&quot;
+</span></code></pre></div>
+Filtra las confirmaciones realizadas por un autor específico.  </p>
+<h3 id="buscar-commits-por-texto-en-el-mensaje">Buscar commits por texto en el mensaje<a class="headerlink" href="#buscar-commits-por-texto-en-el-mensaje" title="Permanent link">&para;</a></h3>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos="1 "></span>git log --grep=&quot;&lt;texto&gt;&quot;
+</span></code></pre></div>
+Muestra los commits cuyo mensaje de confirmación contiene la palabra o patrón indicado.</p>
+<h3 id="mostrar-commits-entre-dos-puntos-del-historial">Mostrar commits entre dos puntos del historial<a class="headerlink" href="#mostrar-commits-entre-dos-puntos-del-historial" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><span class="linenos" data-linenos="1 "></span>git log &lt;inicio&gt;..&lt;fin&gt;
+</span></code></pre></div>
+<h3 id="mostrar-el-historial-de-un-archivo-concreto">Mostrar el historial de un archivo concreto<a class="headerlink" href="#mostrar-el-historial-de-un-archivo-concreto" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><span class="linenos" data-linenos="1 "></span>git log &lt;archivo&gt;
+</span></code></pre></div>
+<h3 id="mostrar-grafico-del-historial">Mostrar gráfico del historial<a class="headerlink" href="#mostrar-grafico-del-historial" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><span class="linenos" data-linenos="1 "></span>git log --graph --decorate --oneline
+</span></code></pre></div>
+<ul>
+<li><code>--graph</code>: Dibuja un gráfico textual con las ramas.  </li>
+<li><code>--decorate</code>: Añade nombres de ramas y etiquetas.  </li>
+<li><code>--oneline</code>: Muestra cada commit en una sola línea.</li>
+</ul>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
 
 
 
@@ -938,7 +1133,8 @@
   
 </div>
       
-        <div class="md-social">
+        
+<div class="md-social">
   
     
     
@@ -1006,10 +1202,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "toc.integrate", "navigation.indexes", "navigation.top", "navigation.tracking", "navigation.footer", "toc.follow", "content.tooltips", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "toc.integrate", "navigation.indexes", "navigation.top", "navigation.tracking", "navigation.footer", "toc.follow", "content.tooltips", "content.code.copy"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.50899def.min.js"></script>
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});

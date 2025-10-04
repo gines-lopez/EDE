@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
     
     
       
@@ -89,6 +89,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#mecanismos-de-actualizacion-en-git" class="md-skip">
+          Saltar a contenido
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -767,6 +772,21 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    11. Mecanismos de actualización
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="11_MecanismosActualizacion.html" class="md-nav__link md-nav__link--active">
         
@@ -779,6 +799,175 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#flujo-basico-de-actualizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flujo básico de actualización
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comando-git-add" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comando git add
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comando-git-commit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comando git commit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comando git commit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplos:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comando-git-merge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comando git merge
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comando git merge">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sintaxis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sintaxis:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comandos-utiles-relacionados-con-ramas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comandos útiles relacionados con ramas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comando-git-rebase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comando git rebase
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comando git rebase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conflictos-de-merge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conflictos de merge
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conflictos de merge">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-de-conflicto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo de conflicto:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#para-resolverlo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Para resolverlo:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#idea-clave" class="md-nav__link">
+    <span class="md-ellipsis">
+      Idea clave
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -854,9 +1043,120 @@
 
 
 
-  <h1>11. Mecanismos de actualización</h1>
-
-
+<h1 id="mecanismos-de-actualizacion-en-git">Mecanismos de actualización en Git<a class="headerlink" href="#mecanismos-de-actualizacion-en-git" title="Permanent link">&para;</a></h1>
+<p>Una de las tareas más importantes en Git es la <strong>confirmación de cambios</strong> en un repositorio, lo que se conoce como <strong>commit</strong>.<br />
+Esta operación registra los cambios realizados y crea un nuevo estado del proyecto que pasa a formar parte del historial del repositorio.</p>
+<h2 id="flujo-basico-de-actualizacion">Flujo básico de actualización<a class="headerlink" href="#flujo-basico-de-actualizacion" title="Permanent link">&para;</a></h2>
+<ol>
+<li>El desarrollador realiza cambios en el código.  </li>
+<li>Los archivos modificados se añaden al área de preparación (<em>staging area</em>) con <code>git add</code>.  </li>
+<li>Los cambios se confirman con <code>git commit</code>, quedando registrados en el historial.</li>
+</ol>
+<p>Una vez confirmados, es posible acceder al estado exacto del proyecto en cualquier commit o comparar los cambios entre distintas confirmaciones.</p>
+<h2 id="comando-git-add">Comando <code>git add</code><a class="headerlink" href="#comando-git-add" title="Permanent link">&para;</a></h2>
+<p>El comando <code>git add</code> prepara los archivos modificados para la siguiente confirmación.<br />
+No guarda los cambios definitivamente, solo los <strong>marca</strong> para incluirlos en el próximo commit.</p>
+<ul>
+<li>
+<p>Flujo de trabajo general:<br />
+<strong>editar → preparar → confirmar</strong></p>
+</li>
+<li>
+<p>Comandos básicos:
+  <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span>git add &lt;archivo&gt;
+</span><span id="__span-0-2"><span class="linenos" data-linenos="2 "></span>git add &lt;carpeta&gt;
+</span><span id="__span-0-3"><span class="linenos" data-linenos="3 "></span>git add -p
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Ejemplo práctico:
+  <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span>git add index.html
+</span></code></pre></div>
+  Añade el archivo <em>index.html</em> al área de preparación.</p>
+</li>
+</ul>
+<p>Puedes usar <code>git status</code> para ver qué archivos están preparados o pendientes de confirmación.</p>
+<h2 id="comando-git-commit">Comando <code>git commit</code><a class="headerlink" href="#comando-git-commit" title="Permanent link">&para;</a></h2>
+<p>El comando <code>git commit</code> crea una <strong>instantánea permanente</strong> de los cambios preparados.<br />
+Cada commit incluye un mensaje que explica qué se ha modificado.</p>
+<h3 id="ejemplos">Ejemplos:<a class="headerlink" href="#ejemplos" title="Permanent link">&para;</a></h3>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span>git commit
+</span></code></pre></div>
+Abre el editor para escribir un mensaje de confirmación.</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos="1 "></span>git commit -m &quot;Actualiza el formulario de contacto&quot;
+</span></code></pre></div>
+Crea la confirmación directamente con un mensaje.</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span>git commit -am &quot;Corrige errores en el login&quot;
+</span></code></pre></div>
+Prepara y confirma todos los archivos modificados con un solo comando.</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos="1 "></span>git commit --amend
+</span></code></pre></div>
+Modifica el último commit, añadiendo cambios o corrigiendo el mensaje.</p>
+<h2 id="comando-git-merge">Comando <code>git merge</code><a class="headerlink" href="#comando-git-merge" title="Permanent link">&para;</a></h2>
+<p>El comando <code>git merge</code> se usa para <strong>fusionar los cambios</strong> de una rama en otra.<br />
+Esto permite integrar el trabajo de distintas líneas de desarrollo.</p>
+<h3 id="sintaxis">Sintaxis:<a class="headerlink" href="#sintaxis" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos="1 "></span>git merge nombre-de-la-rama
+</span></code></pre></div>
+<h3 id="ejemplo">Ejemplo:<a class="headerlink" href="#ejemplo" title="Permanent link">&para;</a></h3>
+<p>Si estás en la rama <code>main</code> y quieres integrar los cambios de <code>dev</code>:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><span class="linenos" data-linenos="1 "></span>git merge dev
+</span></code></pre></div></p>
+<p>Antes de hacer un merge, Git exige que todos los cambios actuales estén confirmados.</p>
+<h2 id="comandos-utiles-relacionados-con-ramas">Comandos útiles relacionados con ramas<a class="headerlink" href="#comandos-utiles-relacionados-con-ramas" title="Permanent link">&para;</a></h2>
+<p>Crear una nueva rama y confirmar cambios:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><span class="linenos" data-linenos="1 "></span>git checkout -b nueva-rama
+</span><span id="__span-8-2"><span class="linenos" data-linenos="2 "></span>git add .
+</span><span id="__span-8-3"><span class="linenos" data-linenos="3 "></span>git commit -m &quot;Primer commit en la nueva rama&quot;
+</span></code></pre></div></p>
+<p>Guardar cambios temporalmente con <strong>stash</strong>:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><span class="linenos" data-linenos="1 "></span>git stash
+</span><span id="__span-9-2"><span class="linenos" data-linenos="2 "></span>git merge nueva-rama
+</span><span id="__span-9-3"><span class="linenos" data-linenos="3 "></span>git stash pop
+</span></code></pre></div></p>
+<p>Abandonar todos los cambios pendientes:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><span class="linenos" data-linenos="1 "></span>git reset --hard
+</span></code></pre></div></p>
+<h2 id="comando-git-rebase">Comando <code>git rebase</code><a class="headerlink" href="#comando-git-rebase" title="Permanent link">&para;</a></h2>
+<p>El comando <code>git rebase</code> permite <strong>mover o reubicar commits</strong> a una nueva base.<br />
+Sirve para mantener un historial más limpio y lineal.</p>
+<h3 id="ejemplo_1">Ejemplo:<a class="headerlink" href="#ejemplo_1" title="Permanent link">&para;</a></h3>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><span class="linenos" data-linenos="1 "></span>git rebase master
+</span></code></pre></div>
+Esto aplica los commits actuales sobre la rama <code>master</code>, como si hubieran partido desde su último punto.</p>
+<p>El rebase es especialmente útil para integrar ramas antes de fusionarlas y evitar merges innecesarios.</p>
+<h2 id="conflictos-de-merge">Conflictos de merge<a class="headerlink" href="#conflictos-de-merge" title="Permanent link">&para;</a></h2>
+<p>Un <strong>conflicto</strong> ocurre cuando dos ramas modifican la misma línea de un archivo de forma distinta.<br />
+Git no puede decidir qué versión conservar, por lo que detiene la fusión y muestra un mensaje de error.</p>
+<h3 id="ejemplo-de-conflicto">Ejemplo de conflicto:<a class="headerlink" href="#ejemplo-de-conflicto" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><span class="linenos" data-linenos="1 "></span>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+</span><span id="__span-12-2"><span class="linenos" data-linenos="2 "></span>Address: 808 South Street
+</span><span id="__span-12-3"><span class="linenos" data-linenos="3 "></span>=======
+</span><span id="__span-12-4"><span class="linenos" data-linenos="4 "></span>Address: 505 North Street
+</span><span id="__span-12-5"><span class="linenos" data-linenos="5 "></span>&gt;&gt;&gt;&gt;&gt;&gt;&gt; updated_address
+</span></code></pre></div>
+<ul>
+<li>Lo que está entre <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code> y <code>=======</code> pertenece a tu rama actual.  </li>
+<li>Lo que está entre <code>=======</code> y <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> pertenece a la rama que intentas fusionar.</li>
+</ul>
+<h3 id="para-resolverlo">Para resolverlo:<a class="headerlink" href="#para-resolverlo" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Edita el archivo y elige la versión correcta.  </li>
+<li>Guarda los cambios.  </li>
+<li>Confirma la resolución con:
+   <div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><span class="linenos" data-linenos="1 "></span>git add .
+</span><span id="__span-13-2"><span class="linenos" data-linenos="2 "></span>git commit -m &quot;Resuelve conflicto en archivo&quot;
+</span></code></pre></div></li>
+</ol>
+<h2 id="idea-clave">Idea clave<a class="headerlink" href="#idea-clave" title="Permanent link">&para;</a></h2>
+<p>El flujo básico de trabajo en Git sigue siempre la misma secuencia:</p>
+<p><strong>editar → preparar (add) → confirmar (commit) → fusionar (merge o rebase)</strong></p>
+<p>Estos mecanismos permiten mantener el control completo sobre el proyecto, su historial y la colaboración entre desarrolladores.</p>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
 
 
 
@@ -938,7 +1238,8 @@
   
 </div>
       
-        <div class="md-social">
+        
+<div class="md-social">
   
     
     
@@ -1006,10 +1307,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "toc.integrate", "navigation.indexes", "navigation.top", "navigation.tracking", "navigation.footer", "toc.follow", "content.tooltips", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "toc.integrate", "navigation.indexes", "navigation.top", "navigation.tracking", "navigation.footer", "toc.follow", "content.tooltips", "content.code.copy"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.50899def.min.js"></script>
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});

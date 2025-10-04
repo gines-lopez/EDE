@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
     
     
       
@@ -89,6 +89,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#comandos-de-historial-y-sincronizacion-en-git" class="md-skip">
+          Saltar a contenido
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -744,6 +749,21 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    10. Push / Pull / Fetch
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="10_PushPullFetch.html" class="md-nav__link md-nav__link--active">
         
@@ -756,6 +776,109 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#comando-git-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comando git log
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comando git log">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-basico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo básico
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opciones-utiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opciones útiles
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comandos-de-sincronizacion-push-pull-y-fetch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comandos de sincronización: push, pull y fetch
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comandos de sincronización: push, pull y fetch">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git-push" class="md-nav__link">
+    <span class="md-ellipsis">
+      git push
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-pull" class="md-nav__link">
+    <span class="md-ellipsis">
+      git pull
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-fetch" class="md-nav__link">
+    <span class="md-ellipsis">
+      git fetch
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#idea-clave" class="md-nav__link">
+    <span class="md-ellipsis">
+      Idea clave
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -854,9 +977,113 @@
 
 
 
-  <h1>10. Push / Pull / Fetch</h1>
-
-
+<h1 id="comandos-de-historial-y-sincronizacion-en-git">Comandos de historial y sincronización en Git<a class="headerlink" href="#comandos-de-historial-y-sincronizacion-en-git" title="Permanent link">&para;</a></h1>
+<h2 id="comando-git-log">Comando <code>git log</code><a class="headerlink" href="#comando-git-log" title="Permanent link">&para;</a></h2>
+<p>El comando <code>git log</code> muestra las confirmaciones (commits) realizadas en el proyecto.<br />
+Permite <strong>ver el historial</strong>, <strong>buscar cambios concretos</strong> y <strong>filtrar resultados</strong>.</p>
+<p>Mientras que <code>git status</code> muestra el estado actual del proyecto, <code>git log</code> se centra en el <strong>historial confirmado</strong>.</p>
+<h3 id="ejemplo-basico">Ejemplo básico<a class="headerlink" href="#ejemplo-basico" title="Permanent link">&para;</a></h3>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span>git log
+</span></code></pre></div>
+Muestra el historial completo de confirmaciones.<br />
+- Usa <strong>Espacio</strong> para avanzar.<br />
+- Usa <strong>q</strong> para salir.</p>
+<h3 id="opciones-utiles">Opciones útiles<a class="headerlink" href="#opciones-utiles" title="Permanent link">&para;</a></h3>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span>git log -n &lt;límite&gt;
+</span></code></pre></div>
+Muestra solo un número específico de confirmaciones.</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span>git log --oneline
+</span></code></pre></div>
+Muestra cada confirmación en una sola línea (resumen rápido).</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos="1 "></span>git log --stat
+</span></code></pre></div>
+Incluye el detalle de archivos modificados y número de líneas añadidas o eliminadas.</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span>git log -p
+</span></code></pre></div>
+Muestra las diferencias exactas de cada commit (detalle máximo).</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos="1 "></span>git log --author=&quot;&lt;nombre&gt;&quot;
+</span></code></pre></div>
+Filtra confirmaciones por autor.</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos="1 "></span>git log --grep=&quot;&lt;texto&gt;&quot;
+</span></code></pre></div>
+Filtra confirmaciones según el mensaje del commit.</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><span class="linenos" data-linenos="1 "></span>git log &lt;inicio&gt;..&lt;fin&gt;
+</span></code></pre></div>
+Muestra los commits entre dos puntos concretos (por ejemplo, entre ramas o IDs de commits).</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><span class="linenos" data-linenos="1 "></span>git log &lt;archivo&gt;
+</span></code></pre></div>
+Muestra solo los commits donde se modificó ese archivo.</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><span class="linenos" data-linenos="1 "></span>git log --graph --decorate --oneline
+</span></code></pre></div>
+- <code>--graph</code> → Dibuja un gráfico de ramas.<br />
+- <code>--decorate</code> → Añade nombres de ramas o etiquetas.<br />
+- <code>--oneline</code> → Muestra cada commit en una sola línea.</p>
+<div class="admonition info">
+<p class="admonition-title">Idea clave</p>
+<p><code>git log</code> es la herramienta principal para <strong>explorar el historial del repositorio</strong>, revisar versiones anteriores y analizar qué cambios se han hecho, cuándo y por quién.</p>
+</div>
+<h2 id="comandos-de-sincronizacion-push-pull-y-fetch">Comandos de sincronización: <code>push</code>, <code>pull</code> y <code>fetch</code><a class="headerlink" href="#comandos-de-sincronizacion-push-pull-y-fetch" title="Permanent link">&para;</a></h2>
+<p>Estos tres comandos son los más importantes para <strong>sincronizar tu trabajo local con el repositorio remoto</strong> (por ejemplo, GitHub).</p>
+<h3 id="git-push"><code>git push</code><a class="headerlink" href="#git-push" title="Permanent link">&para;</a></h3>
+<p>El comando <code>git push</code> <strong>envía los commits locales al repositorio remoto</strong>.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><span class="linenos" data-linenos="1 "></span>git push &lt;nombre_remoto&gt; &lt;rama&gt;
+</span></code></pre></div>
+<h4 id="ejemplo-practico">Ejemplo práctico:<a class="headerlink" href="#ejemplo-practico" title="Permanent link">&para;</a></h4>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><span class="linenos" data-linenos="1 "></span>git push origin main
+</span></code></pre></div>
+Sube tus cambios desde la rama local <code>main</code> al remoto <code>origin</code>.</p>
+<h4 id="subir-todas-las-ramas">Subir todas las ramas:<a class="headerlink" href="#subir-todas-las-ramas" title="Permanent link">&para;</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><span class="linenos" data-linenos="1 "></span>git push --all &lt;nombre_remoto&gt;
+</span></code></pre></div>
+<h4 id="forzar-subida-con-precaucion">Forzar subida (⚠️ con precaución):<a class="headerlink" href="#forzar-subida-con-precaucion" title="Permanent link">&para;</a></h4>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><span class="linenos" data-linenos="1 "></span>git push --force &lt;nombre_remoto&gt; &lt;rama_remota&gt;
+</span></code></pre></div>
+Ignora los cambios existentes en el remoto y sobrescribe su contenido.</p>
+<h4 id="ignorar-comprobaciones-previas-hooks">Ignorar comprobaciones previas (hooks):<a class="headerlink" href="#ignorar-comprobaciones-previas-hooks" title="Permanent link">&para;</a></h4>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><span class="linenos" data-linenos="1 "></span>git push --no-verify
+</span></code></pre></div>
+Evita ejecutar scripts automáticos antes de subir el código (solo en casos puntuales).</p>
+<div class="admonition info">
+<p class="admonition-title">Recuerda</p>
+<p>Antes de hacer un push, asegúrate de que tus cambios están <strong>confirmados (commit)</strong> en el repositorio local.</p>
+</div>
+<h3 id="git-pull"><code>git pull</code><a class="headerlink" href="#git-pull" title="Permanent link">&para;</a></h3>
+<p>El comando <code>git pull</code> <strong>descarga los cambios</strong> del repositorio remoto y los <strong>fusiona automáticamente</strong> con tu rama local.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><span class="linenos" data-linenos="1 "></span>git pull &lt;nombre_remoto&gt; &lt;nombre_rama&gt;
+</span></code></pre></div>
+<h4 id="que-hace-internamente">Qué hace internamente:<a class="headerlink" href="#que-hace-internamente" title="Permanent link">&para;</a></h4>
+<p><code>git pull</code> = <code>git fetch</code> + <code>git merge</code></p>
+<ol>
+<li><strong>fetch</strong> → Descarga los cambios del remoto.  </li>
+<li><strong>merge</strong> → Los une con tu rama local.</li>
+</ol>
+<h4 id="ejemplo">Ejemplo:<a class="headerlink" href="#ejemplo" title="Permanent link">&para;</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><span class="linenos" data-linenos="1 "></span>git pull origin main
+</span></code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title">Importante</p>
+<p>Si tienes cambios sin confirmar, el <code>git pull</code> puede fallar.<br />
+Siempre guarda tus cambios con <code>git commit</code> antes de actualizar.</p>
+</div>
+<h3 id="git-fetch"><code>git fetch</code><a class="headerlink" href="#git-fetch" title="Permanent link">&para;</a></h3>
+<p>El comando <code>git fetch</code> <strong>descarga los cambios del remoto</strong> pero <strong>no los fusiona automáticamente</strong>.<br />
+Te permite revisar las diferencias antes de actualizar tu rama.</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><span class="linenos" data-linenos="1 "></span>git fetch
+</span></code></pre></div>
+Después de un fetch, puedes comparar y decidir si hacer un merge o rebase manual.</p>
+<h2 id="idea-clave">Idea clave<a class="headerlink" href="#idea-clave" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>git fetch</code> → Descarga, pero no fusiona.  </li>
+<li><code>git pull</code> → Descarga y fusiona automáticamente.  </li>
+<li><code>git push</code> → Sube tus commits locales al remoto.  </li>
+<li><code>git log</code> → Explora el historial del proyecto.  </li>
+</ul>
+<p>Con estos comandos, podrás <strong>mantener tu repositorio actualizado</strong>, <strong>sincronizar cambios con otros desarrolladores</strong> y <strong>controlar el historial del código</strong>.</p>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
 
 
 
@@ -938,7 +1165,8 @@
   
 </div>
       
-        <div class="md-social">
+        
+<div class="md-social">
   
     
     
@@ -1006,10 +1234,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "toc.integrate", "navigation.indexes", "navigation.top", "navigation.tracking", "navigation.footer", "toc.follow", "content.tooltips", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "toc.integrate", "navigation.indexes", "navigation.top", "navigation.tracking", "navigation.footer", "toc.follow", "content.tooltips", "content.code.copy"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.50899def.min.js"></script>
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
