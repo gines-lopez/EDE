@@ -1588,11 +1588,9 @@ Todos los objetos de la clase poseen los mismos atributos, pero <strong>con valo
 </span><span id="__span-3-2"><span class="linenos" data-linenos="2 "></span>+ingresarDinero(importe: float)
 </span></code></pre></div></p>
 <h2 id="diagramas-completos-en-mermaid">Diagramas completos en Mermaid<a class="headerlink" href="#diagramas-completos-en-mermaid" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Clase Libro</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Clase Libro</label><label for="__tabbed_1_2">Clase Cuenta</label></div>
 <div class="tabbed-content">
-<div class="tabbed-block"></div>
-</div>
-</div>
+<div class="tabbed-block">
 <pre class="mermaid"><code>classDiagram
     class Libro {
         -int codigo
@@ -1604,11 +1602,8 @@ Todos los objetos de la clase poseen los mismos atributos, pero <strong>con valo
         +boolean prestar()
         +boolean devolver()
     }</code></pre>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Clase Cuenta</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block"></div>
 </div>
-</div>
+<div class="tabbed-block">
 <pre class="mermaid"><code>classDiagram
     class Cuenta {
         -String numero
@@ -1617,6 +1612,9 @@ Todos los objetos de la clase poseen los mismos atributos, pero <strong>con valo
         +ingresarDinero(importe: float)
         +extraerDinero(importe: float)
     }</code></pre>
+</div>
+</div>
+</div>
 <h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
 <div class="admonition info">
 <p class="admonition-title">Recomendación</p>
