@@ -1,0 +1,3077 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/gines-lopez/EDE/ut/ut09/05_Patrones_Diseno.html">
+      
+      
+        <link rel="prev" href="04_Documentacion_Software.html">
+      
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>05. Patrones de diseño - Entornos de desarrollo</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra_index.css">
+    
+      <link rel="stylesheet" href="../../css/extra_general.css">
+    
+      <link rel="stylesheet" href="../../css/extra_pd.css">
+    
+      <link rel="stylesheet" href="../../css/extra_tablasresumen.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#patrones-de-diseno" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../../index.html" title="Entornos de desarrollo" class="md-header__button md-logo" aria-label="Entornos de desarrollo" data-md-component="logo">
+      
+  <img src="../../img/logofp.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Entornos de desarrollo
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              05. Patrones de diseño
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="orange"  aria-label="Cambiar a modo noche"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo noche" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="orange"  aria-label="Cambiar a modo día"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo día" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="Entornos de desarrollo" class="md-nav__button md-logo" aria-label="Entornos de desarrollo" data-md-component="logo">
+      
+  <img src="../../img/logofp.png" alt="logo">
+
+    </a>
+    Entornos de desarrollo
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UT 01. Concepto de programa, lenguajes e IDE
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            UT 01. Concepto de programa, lenguajes e IDE
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut01/ResumenUT.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Propuesta didáctica UT 01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut01/01_ProgramaInformatico.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    01. Concepto de programa
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut01/02_LenguajesProgramacion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    02. Lenguajes de programación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut01/03_Clasificacion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    03. Clasificación de los lenguajes de programación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut01/04_TiposCodigo.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    04. Tipos de código
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UT 02.  Control de versiones
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            UT 02.  Control de versiones
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut02/ResumenUT.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Propuesta didáctica UT 02
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut02/01_ControlVersiones.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    01. Concepto de control de vesiones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut02/02_EstructuraVC.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    02. Estructuras de los sistemas de control de versiones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut02/03_Repositorio.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    03. Repositorio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut02/04_InstalacionGit.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    04. Instalación de Git
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut02/05_FasesRepositorio.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    05. Fases de un repositorio Git
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut02/06_ClonadoRepositorio.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    06. Clonado de un repositorio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut02/07_ConceptoBranch.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    07. Concepto de branch
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut02/08_Status.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    08. Status
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut02/09_Log.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    09. Log
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut02/10_PushPullFetch.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    10. Push / Pull / Fetch
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut02/11_MecanismosActualizacion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    11. Mecanismos de actualización
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut02/12_GeneracionEjecutables.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    12. Generación de ejecutables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut02/13_VentajasInconvenientes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    13. Ventajas e inconvenientes del uso de IDE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UT 03.  Diseño y vida del software
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            UT 03.  Diseño y vida del software
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut03/ResumenUT.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Propuesta didáctica UT 03
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut03/01_IngenieriaSoftware.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    01. Ingeniería del software
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut03/02_EquiposDesarrollo.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    02. Equipos de desarrollo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut03/03_FasesDesarrollo.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    03. Fases del desarrollo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut03/04_EstructuraEquipos.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    04. Estructuras de equipos y fases de desarrollo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut03/05_Herramientas.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    05. Herramientas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UT 04.  Diagramas de clase
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            UT 04.  Diagramas de clase
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut04/ResumenUT.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Propuesta didáctica UT 04
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut04/01_Introduccion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    01. Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut04/02_Conceptos.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    02. Conceptos básicos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut04/03_UML.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    03. Lenguaje UML
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut04/04_ConceptosUML.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    04. Conceptos UML
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut04/05_RelacionesUML.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    05. Relaciones UML
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UT 05.  Diagramas de comportamiento
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            UT 05.  Diagramas de comportamiento
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut05/ResumenUT.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Propuesta didáctica UT 05
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut05/01_DiagramasUso.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    01. Diagramas de casos de uso
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut05/02_DiagramasSecuencias.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    02. Diagramas de secuencia
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut05/03_DiagramasColaboracion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    03. Diagramas de colaboración
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut05/04_DiagramasEstados.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    04. Diagramas de estado
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UT 06.  Metodología de diseño orientada a objetos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            UT 06.  Metodología de diseño orientada a objetos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut06/ResumenUT.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Propuesta didáctica UT 06
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut06/01_POO.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    01. POOD
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut06/02_ClasesAtributosMetodos.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    02. Clases, atributos y métodos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut06/03_VisibilidadObjetos.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    03. Visibilidad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut06/04_Relaciones.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    04. Relaciones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UT 07.  Refactorización
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            UT 07.  Refactorización
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut07/ResumenUT.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Propuesta didáctica UT 07
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut07/01_Refactorizacion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    01. Refactorización
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut07/02_CodigoLimpio.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    02. Código limpio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut07/03_Deuda.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    03. Deuda técnica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut07/04_CuandoComoRefactorizar.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    04. Cuándo y cómo refactorizar
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut07/05_Convenciones.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    05. Convenciones de código
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut07/06_CodeSmells.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    06. Code smells
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UT 08.  Depuración
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            UT 08.  Depuración
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut08/ResumenUT.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Propuesta didáctica UT 08
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut08/01_depuracion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    01. Depuración
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut08/02_proceso.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    02. Proceso
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut08/03_errores.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    03. Errores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut08/04_intellij_debug.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    04. Intellj debugger
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut08/05_casos_avanzados.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    05. Casos avanzados
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UT 09.  Calidad del software
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            UT 09.  Calidad del software
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ResumenUT.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Propuesta didáctica UT 08
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01_Introduccion_Calidad_del_Software.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    01. Calidad del software
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02_Sistemas_Gestion_Calidad.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    02. Sistemas de calidad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03_Metricas_Software.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    03. Métricas de calidad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="04_Documentacion_Software.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    04. Documentación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    05. Patrones de diseño
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="05_Patrones_Diseno.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    05. Patrones de diseño
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-que-son-los-patrones-de-diseno" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. ¿Qué son los Patrones de Diseño?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. ¿Qué son los Patrones de Diseño?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-analogia" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Analogía
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-beneficios" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Beneficios
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-clasificacion-de-patrones-de-diseno" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Clasificación de Patrones de Diseño
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Clasificación de Patrones de Diseño">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-patrones-creacionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Patrones Creacionales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-patrones-estructurales" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Patrones Estructurales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-patrones-de-comportamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Patrones de Comportamiento
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-importancia-de-los-patrones-de-diseno" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Importancia de los Patrones de Diseño
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Importancia de los Patrones de Diseño">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-estandar-de-soluciones-robustas" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Estándar de Soluciones Robustas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-mejora-de-la-comunicacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Mejora de la Comunicación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-fomento-de-la-reusabilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Fomento de la Reusabilidad
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-facilitacion-de-la-refactorizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 Facilitación de la Refactorización
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-reduccion-de-tiempo-y-costos" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5 Reducción de Tiempo y Costos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-adaptabilidad-y-escalabilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.6 Adaptabilidad y Escalabilidad
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-uso-en-la-industria" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Uso en la Industria
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Uso en la Industria">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-software-empresarial" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Software Empresarial
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-software-embebido" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Software Embebido
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-videojuegos" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 Videojuegos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-aplicaciones-moviles" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4 Aplicaciones Móviles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-cloud-y-microservicios" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.5 Cloud y Microservicios
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="patrones-de-diseno">Patrones de diseño<a class="headerlink" href="#patrones-de-diseno" title="Permanent link">&para;</a></h1>
+<h2 id="1-que-son-los-patrones-de-diseno">1. ¿Qué son los Patrones de Diseño?<a class="headerlink" href="#1-que-son-los-patrones-de-diseno" title="Permanent link">&para;</a></h2>
+<p>Los <strong>patrones de diseño</strong> son:</p>
+<ul>
+<li><strong>Soluciones típicas</strong> a problemas comunes en el diseño de software</li>
+<li><strong>Plantillas reutilizables</strong> para resolver problemas</li>
+<li><strong>No código listo para copiar-pegar</strong>, sino descripciones/directrices</li>
+<li><strong>Experiencia colectiva</strong> de expertos documentada</li>
+</ul>
+<h3 id="11-analogia">1.1 Analogía<a class="headerlink" href="#11-analogia" title="Permanent link">&para;</a></h3>
+<p>Los patrones de diseño son como <strong>arquitectura en construcción</strong>:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span>Problema: &quot;Quiero una cocina funcional y hermosa&quot;
+</span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span>
+</span><span id="__span-0-3"><span class="linenos" data-linenos=" 3 "></span>Sin patrón:
+</span><span id="__span-0-4"><span class="linenos" data-linenos=" 4 "></span>
+</span><span id="__span-0-5"><span class="linenos" data-linenos=" 5 "></span>- Cada arquitecto lo hace diferente
+</span><span id="__span-0-6"><span class="linenos" data-linenos=" 6 "></span>- Algunos diseños no funcionan
+</span><span id="__span-0-7"><span class="linenos" data-linenos=" 7 "></span>- Se pierde tiempo rediseñando
+</span><span id="__span-0-8"><span class="linenos" data-linenos=" 8 "></span>
+</span><span id="__span-0-9"><span class="linenos" data-linenos=" 9 "></span>Con patrón (estándares arquitectónicos):
+</span><span id="__span-0-10"><span class="linenos" data-linenos="10 "></span>
+</span><span id="__span-0-11"><span class="linenos" data-linenos="11 "></span>- Cocina abierta: Contador, horno, fregadero en línea
+</span><span id="__span-0-12"><span class="linenos" data-linenos="12 "></span>- Se sabe que funciona
+</span><span id="__span-0-13"><span class="linenos" data-linenos="13 "></span>- Se reduce tiempo de diseño
+</span><span id="__span-0-14"><span class="linenos" data-linenos="14 "></span>- Resultado consistente
+</span></code></pre></div>
+<h3 id="12-beneficios">1.2 Beneficios<a class="headerlink" href="#12-beneficios" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Reutilización</strong>: Soluciones probadas que funcionan</li>
+<li><strong>Comunicación</strong>: Equipo habla el mismo idioma</li>
+<li><strong>Mantenibilidad</strong>: Código más fácil de entender</li>
+<li><strong>Escalabilidad</strong>: Diseños que crecen bien</li>
+<li><strong>Calidad</strong>: Menos bugs, mejor estructura</li>
+<li><strong>Velocidad</strong>: Menos tiempo de diseño</li>
+</ul>
+<h2 id="2-clasificacion-de-patrones-de-diseno">2. Clasificación de Patrones de Diseño<a class="headerlink" href="#2-clasificacion-de-patrones-de-diseno" title="Permanent link">&para;</a></h2>
+<p>Los patrones se clasifican en <strong>3 categorías principales</strong>:</p>
+<h3 id="21-patrones-creacionales">2.1 Patrones Creacionales<a class="headerlink" href="#21-patrones-creacionales" title="Permanent link">&para;</a></h3>
+<p><strong>¿Qué hacen?</strong>: Manejan la <strong>creación de objetos</strong></p>
+<p><strong>¿Por qué son importantes?</strong>: Separar la creación de objetos de su uso</p>
+<h4 id="211-singleton">2.1.1 Singleton<a class="headerlink" href="#211-singleton" title="Permanent link">&para;</a></h4>
+<p><strong>Problema</strong>: Necesito que una clase tenga <strong>solo una instancia</strong> en toda la aplicación</p>
+<p><strong>Solución</strong>: Singleton asegura eso</p>
+<p><strong>Uso real</strong>: Conexión a BD, Logger, Configuración global</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">BaseDatos</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="c1">// Única instancia</span>
+</span><span id="__span-1-3"><span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">BaseDatos</span><span class="w"> </span><span class="n">instancia</span><span class="p">;</span>
+</span><span id="__span-1-4"><span class="linenos" data-linenos=" 4 "></span>
+</span><span id="__span-1-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="c1">// Constructor privado - no se puede hacer new</span>
+</span><span id="__span-1-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="nf">BaseDatos</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="c1">// Inicialización</span>
+</span><span id="__span-1-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-9"><span class="linenos" data-linenos=" 9 "></span>
+</span><span id="__span-1-10"><span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="c1">// Método para obtener la instancia</span>
+</span><span id="__span-1-11"><span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">BaseDatos</span><span class="w"> </span><span class="nf">obtener</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-12"><span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">instancia</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-13"><span class="linenos" data-linenos="13 "></span><span class="w">            </span><span class="n">instancia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BaseDatos</span><span class="p">();</span>
+</span><span id="__span-1-14"><span class="linenos" data-linenos="14 "></span><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-1-15"><span class="linenos" data-linenos="15 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">instancia</span><span class="p">;</span>
+</span><span id="__span-1-16"><span class="linenos" data-linenos="16 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-17"><span class="linenos" data-linenos="17 "></span><span class="p">}</span>
+</span><span id="__span-1-18"><span class="linenos" data-linenos="18 "></span>
+</span><span id="__span-1-19"><span class="linenos" data-linenos="19 "></span><span class="c1">// Uso</span>
+</span><span id="__span-1-20"><span class="linenos" data-linenos="20 "></span><span class="n">BaseDatos</span><span class="w"> </span><span class="n">bd1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BaseDatos</span><span class="p">.</span><span class="na">obtener</span><span class="p">();</span>
+</span><span id="__span-1-21"><span class="linenos" data-linenos="21 "></span><span class="n">BaseDatos</span><span class="w"> </span><span class="n">bd2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BaseDatos</span><span class="p">.</span><span class="na">obtener</span><span class="p">();</span>
+</span><span id="__span-1-22"><span class="linenos" data-linenos="22 "></span><span class="c1">// bd1 y bd2 son la MISMA instancia</span>
+</span></code></pre></div>
+<h4 id="212-factory-method">2.1.2 Factory Method<a class="headerlink" href="#212-factory-method" title="Permanent link">&para;</a></h4>
+<p><strong>Problema</strong>: Necesito crear objetos, pero no sé qué clase específica crear</p>
+<p><strong>Solución</strong>: Una "fábrica" decide qué crear según el contexto</p>
+<p><strong>Uso real</strong>: Parser de documentos (PDF, Word, etc.), Logger con diferentes destinos</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos=" 1 "></span><span class="c1">// Sin Factory Method (acoplado)</span>
+</span><span id="__span-2-2"><span class="linenos" data-linenos=" 2 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MiAplicacion</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-3"><span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">procesar</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">tipo</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tipo</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;pdf&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">            </span><span class="n">Documento</span><span class="w"> </span><span class="n">doc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DocumentoPDF</span><span class="p">();</span><span class="w">  </span><span class="c1">// Acoplado a PDF</span>
+</span><span id="__span-2-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tipo</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;word&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">            </span><span class="n">Documento</span><span class="w"> </span><span class="n">doc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DocumentoWord</span><span class="p">();</span><span class="w">  </span><span class="c1">// Acoplado a Word</span>
+</span><span id="__span-2-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-2-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-10"><span class="linenos" data-linenos="10 "></span><span class="p">}</span>
+</span><span id="__span-2-11"><span class="linenos" data-linenos="11 "></span>
+</span><span id="__span-2-12"><span class="linenos" data-linenos="12 "></span><span class="c1">// Con Factory Method (desacoplado)</span>
+</span><span id="__span-2-13"><span class="linenos" data-linenos="13 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DocumentoFactory</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-14"><span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="n">Documento</span><span class="w"> </span><span class="nf">crear</span><span class="p">();</span>
+</span><span id="__span-2-15"><span class="linenos" data-linenos="15 "></span><span class="p">}</span>
+</span><span id="__span-2-16"><span class="linenos" data-linenos="16 "></span>
+</span><span id="__span-2-17"><span class="linenos" data-linenos="17 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FactoryPDF</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">DocumentoFactory</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-18"><span class="linenos" data-linenos="18 "></span><span class="w">    </span><span class="nd">@Override</span>
+</span><span id="__span-2-19"><span class="linenos" data-linenos="19 "></span><span class="w">    </span><span class="n">Documento</span><span class="w"> </span><span class="nf">crear</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-20"><span class="linenos" data-linenos="20 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DocumentoPDF</span><span class="p">();</span>
+</span><span id="__span-2-21"><span class="linenos" data-linenos="21 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-22"><span class="linenos" data-linenos="22 "></span><span class="p">}</span>
+</span><span id="__span-2-23"><span class="linenos" data-linenos="23 "></span>
+</span><span id="__span-2-24"><span class="linenos" data-linenos="24 "></span><span class="c1">// Uso</span>
+</span><span id="__span-2-25"><span class="linenos" data-linenos="25 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MiAplicacion</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-26"><span class="linenos" data-linenos="26 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">procesar</span><span class="p">(</span><span class="n">DocumentoFactory</span><span class="w"> </span><span class="n">factory</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-27"><span class="linenos" data-linenos="27 "></span><span class="w">        </span><span class="n">Documento</span><span class="w"> </span><span class="n">doc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">factory</span><span class="p">.</span><span class="na">crear</span><span class="p">();</span><span class="w">  </span><span class="c1">// No necesita saber qué tipo</span>
+</span><span id="__span-2-28"><span class="linenos" data-linenos="28 "></span><span class="w">        </span><span class="n">doc</span><span class="p">.</span><span class="na">procesar</span><span class="p">();</span>
+</span><span id="__span-2-29"><span class="linenos" data-linenos="29 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-30"><span class="linenos" data-linenos="30 "></span><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="213-builder">2.1.3 Builder<a class="headerlink" href="#213-builder" title="Permanent link">&para;</a></h4>
+<p><strong>Problema</strong>: Necesito crear objetos complejos con muchos parámetros opcionales</p>
+<p><strong>Solución</strong>: Constructor paso a paso ("builder")</p>
+<p><strong>Uso real</strong>: Construcción de queries SQL, configuración, objetos complejos</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos=" 1 "></span><span class="c1">// Sin Builder (muchos constructores)</span>
+</span><span id="__span-3-2"><span class="linenos" data-linenos=" 2 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Persona</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-3"><span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Persona</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">edad</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-3-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Persona</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">edad</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">email</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-3-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Persona</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">edad</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">telefono</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-3-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="c1">// ... muchos constructores</span>
+</span><span id="__span-3-7"><span class="linenos" data-linenos=" 7 "></span><span class="p">}</span>
+</span><span id="__span-3-8"><span class="linenos" data-linenos=" 8 "></span>
+</span><span id="__span-3-9"><span class="linenos" data-linenos=" 9 "></span><span class="c1">// Con Builder (elegante)</span>
+</span><span id="__span-3-10"><span class="linenos" data-linenos="10 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Persona</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-11"><span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+</span><span id="__span-3-12"><span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">edad</span><span class="p">;</span>
+</span><span id="__span-3-13"><span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">email</span><span class="p">;</span>
+</span><span id="__span-3-14"><span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">telefono</span><span class="p">;</span>
+</span><span id="__span-3-15"><span class="linenos" data-linenos="15 "></span>
+</span><span id="__span-3-16"><span class="linenos" data-linenos="16 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Builder</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-17"><span class="linenos" data-linenos="17 "></span><span class="w">        </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+</span><span id="__span-3-18"><span class="linenos" data-linenos="18 "></span><span class="w">        </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">edad</span><span class="p">;</span>
+</span><span id="__span-3-19"><span class="linenos" data-linenos="19 "></span><span class="w">        </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">email</span><span class="p">;</span>
+</span><span id="__span-3-20"><span class="linenos" data-linenos="20 "></span><span class="w">        </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">telefono</span><span class="p">;</span>
+</span><span id="__span-3-21"><span class="linenos" data-linenos="21 "></span>
+</span><span id="__span-3-22"><span class="linenos" data-linenos="22 "></span><span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="n">Builder</span><span class="w"> </span><span class="nf">nombre</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-23"><span class="linenos" data-linenos="23 "></span><span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+</span><span id="__span-3-24"><span class="linenos" data-linenos="24 "></span><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">;</span><span class="w">  </span><span class="c1">// Retorna para encadenar</span>
+</span><span id="__span-3-25"><span class="linenos" data-linenos="25 "></span><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-3-26"><span class="linenos" data-linenos="26 "></span>
+</span><span id="__span-3-27"><span class="linenos" data-linenos="27 "></span><span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="n">Builder</span><span class="w"> </span><span class="nf">edad</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">edad</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-28"><span class="linenos" data-linenos="28 "></span><span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">edad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">edad</span><span class="p">;</span>
+</span><span id="__span-3-29"><span class="linenos" data-linenos="29 "></span><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">;</span>
+</span><span id="__span-3-30"><span class="linenos" data-linenos="30 "></span><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-3-31"><span class="linenos" data-linenos="31 "></span>
+</span><span id="__span-3-32"><span class="linenos" data-linenos="32 "></span><span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="n">Builder</span><span class="w"> </span><span class="nf">email</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">email</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-33"><span class="linenos" data-linenos="33 "></span><span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">email</span><span class="p">;</span>
+</span><span id="__span-3-34"><span class="linenos" data-linenos="34 "></span><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">;</span>
+</span><span id="__span-3-35"><span class="linenos" data-linenos="35 "></span><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-3-36"><span class="linenos" data-linenos="36 "></span>
+</span><span id="__span-3-37"><span class="linenos" data-linenos="37 "></span><span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="n">Persona</span><span class="w"> </span><span class="nf">build</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-38"><span class="linenos" data-linenos="38 "></span><span class="w">            </span><span class="n">Persona</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="p">();</span>
+</span><span id="__span-3-39"><span class="linenos" data-linenos="39 "></span><span class="w">            </span><span class="n">p</span><span class="p">.</span><span class="na">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">nombre</span><span class="p">;</span>
+</span><span id="__span-3-40"><span class="linenos" data-linenos="40 "></span><span class="w">            </span><span class="n">p</span><span class="p">.</span><span class="na">edad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">edad</span><span class="p">;</span>
+</span><span id="__span-3-41"><span class="linenos" data-linenos="41 "></span><span class="w">            </span><span class="c1">// ...</span>
+</span><span id="__span-3-42"><span class="linenos" data-linenos="42 "></span><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+</span><span id="__span-3-43"><span class="linenos" data-linenos="43 "></span><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-3-44"><span class="linenos" data-linenos="44 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-45"><span class="linenos" data-linenos="45 "></span><span class="p">}</span>
+</span><span id="__span-3-46"><span class="linenos" data-linenos="46 "></span>
+</span><span id="__span-3-47"><span class="linenos" data-linenos="47 "></span><span class="c1">// Uso (muy legible)</span>
+</span><span id="__span-3-48"><span class="linenos" data-linenos="48 "></span><span class="n">Persona</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="p">.</span><span class="na">Builder</span><span class="p">()</span>
+</span><span id="__span-3-49"><span class="linenos" data-linenos="49 "></span><span class="w">    </span><span class="p">.</span><span class="na">nombre</span><span class="p">(</span><span class="s">&quot;Juan&quot;</span><span class="p">)</span>
+</span><span id="__span-3-50"><span class="linenos" data-linenos="50 "></span><span class="w">    </span><span class="p">.</span><span class="na">edad</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+</span><span id="__span-3-51"><span class="linenos" data-linenos="51 "></span><span class="w">    </span><span class="p">.</span><span class="na">email</span><span class="p">(</span><span class="s">&quot;juan@example.com&quot;</span><span class="p">)</span>
+</span><span id="__span-3-52"><span class="linenos" data-linenos="52 "></span><span class="w">    </span><span class="p">.</span><span class="na">build</span><span class="p">();</span>
+</span></code></pre></div>
+<h4 id="214-abstract-factory">2.1.4 Abstract Factory<a class="headerlink" href="#214-abstract-factory" title="Permanent link">&para;</a></h4>
+<p><strong>Problema</strong>: Crear familias de objetos relacionados</p>
+<p><strong>Uso real</strong>: Interfaces para diferentes sistemas operativos, Temas (claro/oscuro)</p>
+<h4 id="215-prototype">2.1.5 Prototype<a class="headerlink" href="#215-prototype" title="Permanent link">&para;</a></h4>
+<p><strong>Problema</strong>: Crear nuevos objetos clonando existentes</p>
+<p><strong>Uso real</strong>: Copiar documentos, duplicar configuraciones</p>
+<h3 id="22-patrones-estructurales">2.2 Patrones Estructurales<a class="headerlink" href="#22-patrones-estructurales" title="Permanent link">&para;</a></h3>
+<p><strong>¿Qué hacen?</strong>: Manejan la <strong>composición de clases y objetos</strong></p>
+<p><strong>¿Por qué son importantes?</strong>: Crear estructuras que funcionan bien</p>
+<h4 id="221-adapter-o-wrapper">2.2.1 Adapter (o Wrapper)<a class="headerlink" href="#221-adapter-o-wrapper" title="Permanent link">&para;</a></h4>
+<p><strong>Problema</strong>: Dos interfaces incompatibles necesitan trabajar juntas</p>
+<p><strong>Solución</strong>: Crear un adaptador que traduce entre ellas</p>
+<p><strong>Uso real</strong>: Conectar código antiguo con nuevo, integrar librerías externas</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos=" 1 "></span><span class="c1">// Interfaz antigua</span>
+</span><span id="__span-4-2"><span class="linenos" data-linenos=" 2 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">SistemaAntiguo</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-3"><span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">envieDatos</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">datos</span><span class="p">);</span>
+</span><span id="__span-4-4"><span class="linenos" data-linenos=" 4 "></span><span class="p">}</span>
+</span><span id="__span-4-5"><span class="linenos" data-linenos=" 5 "></span>
+</span><span id="__span-4-6"><span class="linenos" data-linenos=" 6 "></span><span class="c1">// Interfaz nueva</span>
+</span><span id="__span-4-7"><span class="linenos" data-linenos=" 7 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">SistemaModerno</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">procesarInformacion</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">info</span><span class="p">);</span>
+</span><span id="__span-4-9"><span class="linenos" data-linenos=" 9 "></span><span class="p">}</span>
+</span><span id="__span-4-10"><span class="linenos" data-linenos="10 "></span>
+</span><span id="__span-4-11"><span class="linenos" data-linenos="11 "></span><span class="c1">// El sistema antiguo no puede usar el moderno directamente</span>
+</span><span id="__span-4-12"><span class="linenos" data-linenos="12 "></span><span class="c1">// Creamos un Adapter</span>
+</span><span id="__span-4-13"><span class="linenos" data-linenos="13 "></span>
+</span><span id="__span-4-14"><span class="linenos" data-linenos="14 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AdaptadorSistemas</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">SistemaAntiguo</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-15"><span class="linenos" data-linenos="15 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">SistemaModerno</span><span class="w"> </span><span class="n">sistemaModerno</span><span class="p">;</span>
+</span><span id="__span-4-16"><span class="linenos" data-linenos="16 "></span>
+</span><span id="__span-4-17"><span class="linenos" data-linenos="17 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">AdaptadorSistemas</span><span class="p">(</span><span class="n">SistemaModerno</span><span class="w"> </span><span class="n">moderno</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-18"><span class="linenos" data-linenos="18 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">sistemaModerno</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">moderno</span><span class="p">;</span>
+</span><span id="__span-4-19"><span class="linenos" data-linenos="19 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-20"><span class="linenos" data-linenos="20 "></span>
+</span><span id="__span-4-21"><span class="linenos" data-linenos="21 "></span><span class="w">    </span><span class="nd">@Override</span>
+</span><span id="__span-4-22"><span class="linenos" data-linenos="22 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">envieDatos</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">datos</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-23"><span class="linenos" data-linenos="23 "></span><span class="w">        </span><span class="c1">// Traduce el llamado antiguo al nuevo</span>
+</span><span id="__span-4-24"><span class="linenos" data-linenos="24 "></span><span class="w">        </span><span class="n">sistemaModerno</span><span class="p">.</span><span class="na">procesarInformacion</span><span class="p">(</span><span class="n">datos</span><span class="p">);</span>
+</span><span id="__span-4-25"><span class="linenos" data-linenos="25 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-26"><span class="linenos" data-linenos="26 "></span><span class="p">}</span>
+</span><span id="__span-4-27"><span class="linenos" data-linenos="27 "></span>
+</span><span id="__span-4-28"><span class="linenos" data-linenos="28 "></span><span class="c1">// Uso</span>
+</span><span id="__span-4-29"><span class="linenos" data-linenos="29 "></span><span class="n">SistemaModerno</span><span class="w"> </span><span class="n">moderno</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SistemaModerno</span><span class="p">();</span>
+</span><span id="__span-4-30"><span class="linenos" data-linenos="30 "></span><span class="n">SistemaAntiguo</span><span class="w"> </span><span class="n">antiguo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">AdaptadorSistemas</span><span class="p">(</span><span class="n">moderno</span><span class="p">);</span>
+</span><span id="__span-4-31"><span class="linenos" data-linenos="31 "></span><span class="n">antiguo</span><span class="p">.</span><span class="na">envieDatos</span><span class="p">(</span><span class="s">&quot;datos&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// Funciona con interfaz antigua</span>
+</span></code></pre></div>
+<h4 id="222-decorator">2.2.2 Decorator<a class="headerlink" href="#222-decorator" title="Permanent link">&para;</a></h4>
+<p><strong>Problema</strong>: Añadir responsabilidades a objetos dinámicamente</p>
+<p><strong>Solución</strong>: Envolver el objeto con "decoradores"</p>
+<p><strong>Uso real</strong>: Buffering, logging, compresión</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Stream</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-2"><span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">escribir</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">datos</span><span class="p">);</span>
+</span><span id="__span-5-3"><span class="linenos" data-linenos=" 3 "></span><span class="p">}</span>
+</span><span id="__span-5-4"><span class="linenos" data-linenos=" 4 "></span>
+</span><span id="__span-5-5"><span class="linenos" data-linenos=" 5 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">StreamBasico</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Stream</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="nd">@Override</span>
+</span><span id="__span-5-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">escribir</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">datos</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Escribiendo: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">datos</span><span class="p">);</span>
+</span><span id="__span-5-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-10"><span class="linenos" data-linenos="10 "></span><span class="p">}</span>
+</span><span id="__span-5-11"><span class="linenos" data-linenos="11 "></span>
+</span><span id="__span-5-12"><span class="linenos" data-linenos="12 "></span><span class="c1">// Decorador 1: Añade compresión</span>
+</span><span id="__span-5-13"><span class="linenos" data-linenos="13 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">StreamComprimido</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Stream</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-14"><span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Stream</span><span class="w"> </span><span class="n">stream</span><span class="p">;</span>
+</span><span id="__span-5-15"><span class="linenos" data-linenos="15 "></span>
+</span><span id="__span-5-16"><span class="linenos" data-linenos="16 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">StreamComprimido</span><span class="p">(</span><span class="n">Stream</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-17"><span class="linenos" data-linenos="17 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">;</span>
+</span><span id="__span-5-18"><span class="linenos" data-linenos="18 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-19"><span class="linenos" data-linenos="19 "></span>
+</span><span id="__span-5-20"><span class="linenos" data-linenos="20 "></span><span class="w">    </span><span class="nd">@Override</span>
+</span><span id="__span-5-21"><span class="linenos" data-linenos="21 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">escribir</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">datos</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-22"><span class="linenos" data-linenos="22 "></span><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">comprimido</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">comprimir</span><span class="p">(</span><span class="n">datos</span><span class="p">);</span>
+</span><span id="__span-5-23"><span class="linenos" data-linenos="23 "></span><span class="w">        </span><span class="n">stream</span><span class="p">.</span><span class="na">escribir</span><span class="p">(</span><span class="n">comprimido</span><span class="p">);</span>
+</span><span id="__span-5-24"><span class="linenos" data-linenos="24 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-25"><span class="linenos" data-linenos="25 "></span>
+</span><span id="__span-5-26"><span class="linenos" data-linenos="26 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">comprimir</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">datos</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-27"><span class="linenos" data-linenos="27 "></span><span class="w">        </span><span class="c1">// Lógica de compresión</span>
+</span><span id="__span-5-28"><span class="linenos" data-linenos="28 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">datos</span><span class="p">;</span>
+</span><span id="__span-5-29"><span class="linenos" data-linenos="29 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-30"><span class="linenos" data-linenos="30 "></span><span class="p">}</span>
+</span><span id="__span-5-31"><span class="linenos" data-linenos="31 "></span>
+</span><span id="__span-5-32"><span class="linenos" data-linenos="32 "></span><span class="c1">// Decorador 2: Añade encriptación</span>
+</span><span id="__span-5-33"><span class="linenos" data-linenos="33 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">StreamEncriptado</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Stream</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-34"><span class="linenos" data-linenos="34 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Stream</span><span class="w"> </span><span class="n">stream</span><span class="p">;</span>
+</span><span id="__span-5-35"><span class="linenos" data-linenos="35 "></span>
+</span><span id="__span-5-36"><span class="linenos" data-linenos="36 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">StreamEncriptado</span><span class="p">(</span><span class="n">Stream</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-37"><span class="linenos" data-linenos="37 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">;</span>
+</span><span id="__span-5-38"><span class="linenos" data-linenos="38 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-39"><span class="linenos" data-linenos="39 "></span>
+</span><span id="__span-5-40"><span class="linenos" data-linenos="40 "></span><span class="w">    </span><span class="nd">@Override</span>
+</span><span id="__span-5-41"><span class="linenos" data-linenos="41 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">escribir</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">datos</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-42"><span class="linenos" data-linenos="42 "></span><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">encriptado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">encriptar</span><span class="p">(</span><span class="n">datos</span><span class="p">);</span>
+</span><span id="__span-5-43"><span class="linenos" data-linenos="43 "></span><span class="w">        </span><span class="n">stream</span><span class="p">.</span><span class="na">escribir</span><span class="p">(</span><span class="n">encriptado</span><span class="p">);</span>
+</span><span id="__span-5-44"><span class="linenos" data-linenos="44 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-45"><span class="linenos" data-linenos="45 "></span><span class="p">}</span>
+</span><span id="__span-5-46"><span class="linenos" data-linenos="46 "></span>
+</span><span id="__span-5-47"><span class="linenos" data-linenos="47 "></span><span class="c1">// Uso (composición - los combino)</span>
+</span><span id="__span-5-48"><span class="linenos" data-linenos="48 "></span><span class="n">Stream</span><span class="w"> </span><span class="n">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StreamBasico</span><span class="p">();</span>
+</span><span id="__span-5-49"><span class="linenos" data-linenos="49 "></span><span class="n">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StreamComprimido</span><span class="p">(</span><span class="n">stream</span><span class="p">);</span><span class="w">    </span><span class="c1">// Añade compresión</span>
+</span><span id="__span-5-50"><span class="linenos" data-linenos="50 "></span><span class="n">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StreamEncriptado</span><span class="p">(</span><span class="n">stream</span><span class="p">);</span><span class="w">     </span><span class="c1">// Añade encriptación</span>
+</span><span id="__span-5-51"><span class="linenos" data-linenos="51 "></span><span class="n">stream</span><span class="p">.</span><span class="na">escribir</span><span class="p">(</span><span class="s">&quot;datos secretos&quot;</span><span class="p">);</span>
+</span><span id="__span-5-52"><span class="linenos" data-linenos="52 "></span><span class="c1">// Se comprime Y se encripta</span>
+</span></code></pre></div>
+<h4 id="223-facade">2.2.3 Facade<a class="headerlink" href="#223-facade" title="Permanent link">&para;</a></h4>
+<p><strong>Problema</strong>: Interfaz complicada con muchos subsistemas</p>
+<p><strong>Solución</strong>: Crear una "fachada" simple que oculta la complejidad</p>
+<p><strong>Uso real</strong>: Librerías complejas (BD, frameworks), API simplificada</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos=" 1 "></span><span class="c1">// Subsistemas complejos</span>
+</span><span id="__span-6-2"><span class="linenos" data-linenos=" 2 "></span><span class="kd">class</span> <span class="nc">Motor</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">iniciar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-6-3"><span class="linenos" data-linenos=" 3 "></span><span class="kd">class</span> <span class="nc">Transmision</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">engranar</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">marcha</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-6-4"><span class="linenos" data-linenos=" 4 "></span><span class="kd">class</span> <span class="nc">Combustible</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">inyectar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-6-5"><span class="linenos" data-linenos=" 5 "></span><span class="kd">class</span> <span class="nc">Ignicion</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">activar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-6-6"><span class="linenos" data-linenos=" 6 "></span>
+</span><span id="__span-6-7"><span class="linenos" data-linenos=" 7 "></span><span class="c1">// Fachada simple</span>
+</span><span id="__span-6-8"><span class="linenos" data-linenos=" 8 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Automovil</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Motor</span><span class="w"> </span><span class="n">motor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Motor</span><span class="p">();</span>
+</span><span id="__span-6-10"><span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Transmision</span><span class="w"> </span><span class="n">transmision</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Transmision</span><span class="p">();</span>
+</span><span id="__span-6-11"><span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Combustible</span><span class="w"> </span><span class="n">combustible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Combustible</span><span class="p">();</span>
+</span><span id="__span-6-12"><span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Ignicion</span><span class="w"> </span><span class="n">ignicion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Ignicion</span><span class="p">();</span>
+</span><span id="__span-6-13"><span class="linenos" data-linenos="13 "></span>
+</span><span id="__span-6-14"><span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="c1">// Usuario solo necesita llamar a arrancar()</span>
+</span><span id="__span-6-15"><span class="linenos" data-linenos="15 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">arrancar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-16"><span class="linenos" data-linenos="16 "></span><span class="w">        </span><span class="n">ignicion</span><span class="p">.</span><span class="na">activar</span><span class="p">();</span>
+</span><span id="__span-6-17"><span class="linenos" data-linenos="17 "></span><span class="w">        </span><span class="n">combustible</span><span class="p">.</span><span class="na">inyectar</span><span class="p">();</span>
+</span><span id="__span-6-18"><span class="linenos" data-linenos="18 "></span><span class="w">        </span><span class="n">motor</span><span class="p">.</span><span class="na">iniciar</span><span class="p">();</span>
+</span><span id="__span-6-19"><span class="linenos" data-linenos="19 "></span><span class="w">        </span><span class="n">transmision</span><span class="p">.</span><span class="na">engranar</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</span><span id="__span-6-20"><span class="linenos" data-linenos="20 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Auto listo&quot;</span><span class="p">);</span>
+</span><span id="__span-6-21"><span class="linenos" data-linenos="21 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-6-22"><span class="linenos" data-linenos="22 "></span><span class="p">}</span>
+</span><span id="__span-6-23"><span class="linenos" data-linenos="23 "></span>
+</span><span id="__span-6-24"><span class="linenos" data-linenos="24 "></span><span class="c1">// Uso simple</span>
+</span><span id="__span-6-25"><span class="linenos" data-linenos="25 "></span><span class="n">Automovil</span><span class="w"> </span><span class="n">auto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Automovil</span><span class="p">();</span>
+</span><span id="__span-6-26"><span class="linenos" data-linenos="26 "></span><span class="n">auto</span><span class="p">.</span><span class="na">arrancar</span><span class="p">();</span><span class="w">  </span><span class="c1">// ¡Eso es todo! La complejidad está oculta</span>
+</span></code></pre></div>
+<h4 id="224-composite">2.2.4 Composite<a class="headerlink" href="#224-composite" title="Permanent link">&para;</a></h4>
+<p><strong>Problema</strong>: Tratar objetos simples y compuestos de la misma manera</p>
+<p><strong>Uso real</strong>: Estructura de carpetas/archivos, menús anidados</p>
+<h4 id="225-proxy">2.2.5 Proxy<a class="headerlink" href="#225-proxy" title="Permanent link">&para;</a></h4>
+<p><strong>Problema</strong>: Necesito controlar el acceso a otro objeto</p>
+<p><strong>Uso real</strong>: Lazy loading, validación de acceso, logging</p>
+<h3 id="23-patrones-de-comportamiento">2.3 Patrones de Comportamiento<a class="headerlink" href="#23-patrones-de-comportamiento" title="Permanent link">&para;</a></h3>
+<p><strong>¿Qué hacen?</strong>: Manejan <strong>comunicación entre objetos</strong></p>
+<p><strong>¿Por qué son importantes?</strong>: Cómo los objetos se hablan entre sí</p>
+<h4 id="231-observer">2.3.1 Observer<a class="headerlink" href="#231-observer" title="Permanent link">&para;</a></h4>
+<p><strong>Problema</strong>: Necesito que múltiples objetos reaccionen a cambios</p>
+<p><strong>Solución</strong>: El objeto observado notifica a los "observadores"</p>
+<p><strong>Uso real</strong>: Event handlers, <abbr title="Modelo - Vista - Controlador">MVC</abbr>, sistemas de notificación</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-7-1"><span class="linenos" data-linenos=" 1 "></span><span class="c1">// Interfaz del observador</span>
+</span><span id="__span-7-2"><span class="linenos" data-linenos=" 2 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Observador</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-3"><span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">actualizar</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">mensaje</span><span class="p">);</span>
+</span><span id="__span-7-4"><span class="linenos" data-linenos=" 4 "></span><span class="p">}</span>
+</span><span id="__span-7-5"><span class="linenos" data-linenos=" 5 "></span>
+</span><span id="__span-7-6"><span class="linenos" data-linenos=" 6 "></span><span class="c1">// El sujeto que es observado</span>
+</span><span id="__span-7-7"><span class="linenos" data-linenos=" 7 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Sujeto</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Observador</span><span class="o">&gt;</span><span class="w"> </span><span class="n">observadores</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+</span><span id="__span-7-9"><span class="linenos" data-linenos=" 9 "></span>
+</span><span id="__span-7-10"><span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">suscribir</span><span class="p">(</span><span class="n">Observador</span><span class="w"> </span><span class="n">o</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-11"><span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="n">observadores</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">o</span><span class="p">);</span>
+</span><span id="__span-7-12"><span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-7-13"><span class="linenos" data-linenos="13 "></span>
+</span><span id="__span-7-14"><span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">cambio</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">mensaje</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-15"><span class="linenos" data-linenos="15 "></span><span class="w">        </span><span class="c1">// Notifica a todos los observadores</span>
+</span><span id="__span-7-16"><span class="linenos" data-linenos="16 "></span><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Observador</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">observadores</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-17"><span class="linenos" data-linenos="17 "></span><span class="w">            </span><span class="n">o</span><span class="p">.</span><span class="na">actualizar</span><span class="p">(</span><span class="n">mensaje</span><span class="p">);</span>
+</span><span id="__span-7-18"><span class="linenos" data-linenos="18 "></span><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-7-19"><span class="linenos" data-linenos="19 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-7-20"><span class="linenos" data-linenos="20 "></span><span class="p">}</span>
+</span><span id="__span-7-21"><span class="linenos" data-linenos="21 "></span>
+</span><span id="__span-7-22"><span class="linenos" data-linenos="22 "></span><span class="c1">// Observadores específicos</span>
+</span><span id="__span-7-23"><span class="linenos" data-linenos="23 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Logger</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Observador</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-24"><span class="linenos" data-linenos="24 "></span><span class="w">    </span><span class="nd">@Override</span>
+</span><span id="__span-7-25"><span class="linenos" data-linenos="25 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">actualizar</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">mensaje</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-26"><span class="linenos" data-linenos="26 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;[LOG] &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">mensaje</span><span class="p">);</span>
+</span><span id="__span-7-27"><span class="linenos" data-linenos="27 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-7-28"><span class="linenos" data-linenos="28 "></span><span class="p">}</span>
+</span><span id="__span-7-29"><span class="linenos" data-linenos="29 "></span>
+</span><span id="__span-7-30"><span class="linenos" data-linenos="30 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Email</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Observador</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-31"><span class="linenos" data-linenos="31 "></span><span class="w">    </span><span class="nd">@Override</span>
+</span><span id="__span-7-32"><span class="linenos" data-linenos="32 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">actualizar</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">mensaje</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-33"><span class="linenos" data-linenos="33 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;[EMAIL] Enviando: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">mensaje</span><span class="p">);</span>
+</span><span id="__span-7-34"><span class="linenos" data-linenos="34 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-7-35"><span class="linenos" data-linenos="35 "></span><span class="p">}</span>
+</span><span id="__span-7-36"><span class="linenos" data-linenos="36 "></span>
+</span><span id="__span-7-37"><span class="linenos" data-linenos="37 "></span><span class="c1">// Uso</span>
+</span><span id="__span-7-38"><span class="linenos" data-linenos="38 "></span><span class="n">Sujeto</span><span class="w"> </span><span class="n">sujeto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Sujeto</span><span class="p">();</span>
+</span><span id="__span-7-39"><span class="linenos" data-linenos="39 "></span><span class="n">sujeto</span><span class="p">.</span><span class="na">suscribir</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Logger</span><span class="p">());</span>
+</span><span id="__span-7-40"><span class="linenos" data-linenos="40 "></span><span class="n">sujeto</span><span class="p">.</span><span class="na">suscribir</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Email</span><span class="p">());</span>
+</span><span id="__span-7-41"><span class="linenos" data-linenos="41 "></span>
+</span><span id="__span-7-42"><span class="linenos" data-linenos="42 "></span><span class="n">sujeto</span><span class="p">.</span><span class="na">cambio</span><span class="p">(</span><span class="s">&quot;Algo pasó&quot;</span><span class="p">);</span>
+</span><span id="__span-7-43"><span class="linenos" data-linenos="43 "></span><span class="c1">// Output:</span>
+</span><span id="__span-7-44"><span class="linenos" data-linenos="44 "></span><span class="c1">// [LOG] Algo pasó</span>
+</span><span id="__span-7-45"><span class="linenos" data-linenos="45 "></span><span class="c1">// [EMAIL] Enviando: Algo pasó</span>
+</span></code></pre></div>
+<h4 id="232-strategy">2.3.2 Strategy<a class="headerlink" href="#232-strategy" title="Permanent link">&para;</a></h4>
+<p><strong>Problema</strong>: Múltiples formas de hacer algo, elegible en tiempo de ejecución</p>
+<p><strong>Solución</strong>: Encapsular algoritmo en clases intercambiables</p>
+<p><strong>Uso real</strong>: Diferentes métodos de pago, algoritmos de compresión, ordenamiento</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-8-1"><span class="linenos" data-linenos=" 1 "></span><span class="c1">// Interfaz de estrategia</span>
+</span><span id="__span-8-2"><span class="linenos" data-linenos=" 2 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">EstrategiaPago</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-3"><span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">pagar</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">cantidad</span><span class="p">);</span>
+</span><span id="__span-8-4"><span class="linenos" data-linenos=" 4 "></span><span class="p">}</span>
+</span><span id="__span-8-5"><span class="linenos" data-linenos=" 5 "></span>
+</span><span id="__span-8-6"><span class="linenos" data-linenos=" 6 "></span><span class="c1">// Estrategias concretas</span>
+</span><span id="__span-8-7"><span class="linenos" data-linenos=" 7 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">PagoTarjeta</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">EstrategiaPago</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="nd">@Override</span>
+</span><span id="__span-8-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">pagar</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">cantidad</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-10"><span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Pagando &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">cantidad</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; con tarjeta&quot;</span><span class="p">);</span>
+</span><span id="__span-8-11"><span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-8-12"><span class="linenos" data-linenos="12 "></span><span class="p">}</span>
+</span><span id="__span-8-13"><span class="linenos" data-linenos="13 "></span>
+</span><span id="__span-8-14"><span class="linenos" data-linenos="14 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">PagoPayPal</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">EstrategiaPago</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-15"><span class="linenos" data-linenos="15 "></span><span class="w">    </span><span class="nd">@Override</span>
+</span><span id="__span-8-16"><span class="linenos" data-linenos="16 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">pagar</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">cantidad</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-17"><span class="linenos" data-linenos="17 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Pagando &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">cantidad</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; con PayPal&quot;</span><span class="p">);</span>
+</span><span id="__span-8-18"><span class="linenos" data-linenos="18 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-8-19"><span class="linenos" data-linenos="19 "></span><span class="p">}</span>
+</span><span id="__span-8-20"><span class="linenos" data-linenos="20 "></span>
+</span><span id="__span-8-21"><span class="linenos" data-linenos="21 "></span><span class="c1">// Uso</span>
+</span><span id="__span-8-22"><span class="linenos" data-linenos="22 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Compra</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-23"><span class="linenos" data-linenos="23 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">EstrategiaPago</span><span class="w"> </span><span class="n">estrategia</span><span class="p">;</span>
+</span><span id="__span-8-24"><span class="linenos" data-linenos="24 "></span>
+</span><span id="__span-8-25"><span class="linenos" data-linenos="25 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Compra</span><span class="p">(</span><span class="n">EstrategiaPago</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-26"><span class="linenos" data-linenos="26 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">estrategia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="p">;</span>
+</span><span id="__span-8-27"><span class="linenos" data-linenos="27 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-8-28"><span class="linenos" data-linenos="28 "></span>
+</span><span id="__span-8-29"><span class="linenos" data-linenos="29 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">procesar</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">total</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-30"><span class="linenos" data-linenos="30 "></span><span class="w">        </span><span class="n">estrategia</span><span class="p">.</span><span class="na">pagar</span><span class="p">(</span><span class="n">total</span><span class="p">);</span>
+</span><span id="__span-8-31"><span class="linenos" data-linenos="31 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-8-32"><span class="linenos" data-linenos="32 "></span><span class="p">}</span>
+</span><span id="__span-8-33"><span class="linenos" data-linenos="33 "></span>
+</span><span id="__span-8-34"><span class="linenos" data-linenos="34 "></span><span class="c1">// En tiempo de ejecución, elegimos estrategia</span>
+</span><span id="__span-8-35"><span class="linenos" data-linenos="35 "></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">usuarioPrefiereTarjeta</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-36"><span class="linenos" data-linenos="36 "></span><span class="w">    </span><span class="n">compra</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Compra</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">PagoTarjeta</span><span class="p">());</span>
+</span><span id="__span-8-37"><span class="linenos" data-linenos="37 "></span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-38"><span class="linenos" data-linenos="38 "></span><span class="w">    </span><span class="n">compra</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Compra</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">PagoPayPal</span><span class="p">());</span>
+</span><span id="__span-8-39"><span class="linenos" data-linenos="39 "></span><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="233-command">2.3.3 Command<a class="headerlink" href="#233-command" title="Permanent link">&para;</a></h4>
+<p><strong>Problema</strong>: Encapsular una solicitud como objeto</p>
+<p><strong>Uso real</strong>: Deshacer/Rehacer, colas de trabajo, macros</p>
+<h4 id="234-template-method">2.3.4 Template Method<a class="headerlink" href="#234-template-method" title="Permanent link">&para;</a></h4>
+<p><strong>Problema</strong>: Algoritmo con pasos que varían</p>
+<p><strong>Solución</strong>: Define estructura en clase base, subclases implementan pasos</p>
+<h4 id="235-iterator">2.3.5 Iterator<a class="headerlink" href="#235-iterator" title="Permanent link">&para;</a></h4>
+<p><strong>Problema</strong>: Acceder secuencialmente a elementos sin exponer estructura</p>
+<p><strong>Uso real</strong>: Iteradores de colecciones, recorridos de árboles</p>
+<h2 id="3-importancia-de-los-patrones-de-diseno">3. Importancia de los Patrones de Diseño<a class="headerlink" href="#3-importancia-de-los-patrones-de-diseno" title="Permanent link">&para;</a></h2>
+<h3 id="31-estandar-de-soluciones-robustas">3.1 Estándar de Soluciones Robustas<a class="headerlink" href="#31-estandar-de-soluciones-robustas" title="Permanent link">&para;</a></h3>
+<p>Los patrones representan soluciones <strong>comprobadas y optimizadas</strong>:</p>
+<ul>
+<li>Evitan errores comunes</li>
+<li>Han sido refinados durante años</li>
+<li>Funcionan en múltiples contextos</li>
+</ul>
+<h3 id="32-mejora-de-la-comunicacion">3.2 Mejora de la Comunicación<a class="headerlink" href="#32-mejora-de-la-comunicacion" title="Permanent link">&para;</a></h3>
+<p>Un "patrón de diseño" es un <strong>lenguaje común</strong>:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><span class="linenos" data-linenos="1 "></span>Sin patrones:
+</span><span id="__span-9-2"><span class="linenos" data-linenos="2 "></span>- Dev 1: &quot;Necesitamos una clase que maneje un objeto único&quot;
+</span><span id="__span-9-3"><span class="linenos" data-linenos="3 "></span>- Dev 2: &quot;¿Eh? ¿Cómo?&quot;
+</span><span id="__span-9-4"><span class="linenos" data-linenos="4 "></span>
+</span><span id="__span-9-5"><span class="linenos" data-linenos="5 "></span>Con patrones:
+</span><span id="__span-9-6"><span class="linenos" data-linenos="6 "></span>- Dev 1: &quot;Vamos a usar Singleton&quot;
+</span><span id="__span-9-7"><span class="linenos" data-linenos="7 "></span>- Dev 2: &quot;Ah, perfecto, entiendo exactamente lo que quieres&quot;
+</span></code></pre></div>
+<h3 id="33-fomento-de-la-reusabilidad">3.3 Fomento de la Reusabilidad<a class="headerlink" href="#33-fomento-de-la-reusabilidad" title="Permanent link">&para;</a></h3>
+<p>Los patrones diseñan código que se reutiliza:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><span class="linenos" data-linenos="1 "></span>Factory: Código para crear objetos es independiente de las clases concretas
+</span><span id="__span-10-2"><span class="linenos" data-linenos="2 "></span>Builder: Lógica de construcción reutilizable
+</span><span id="__span-10-3"><span class="linenos" data-linenos="3 "></span>Decorator: Funcionalidades se pueden combinar de múltiples formas
+</span></code></pre></div></p>
+<h3 id="34-facilitacion-de-la-refactorizacion">3.4 Facilitación de la Refactorización<a class="headerlink" href="#34-facilitacion-de-la-refactorizacion" title="Permanent link">&para;</a></h3>
+<p>Los patrones proporcionan "dirección":
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><span class="linenos" data-linenos="1 "></span>&quot;Este código necesita refactorización&quot;
+</span><span id="__span-11-2"><span class="linenos" data-linenos="2 "></span>- Identifica patrón que encaja
+</span><span id="__span-11-3"><span class="linenos" data-linenos="3 "></span>- Conoce exactamente cómo refactorizar
+</span></code></pre></div></p>
+<h3 id="35-reduccion-de-tiempo-y-costos">3.5 Reducción de Tiempo y Costos<a class="headerlink" href="#35-reduccion-de-tiempo-y-costos" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><span class="linenos" data-linenos=" 1 "></span>Sin patrones:
+</span><span id="__span-12-2"><span class="linenos" data-linenos=" 2 "></span>- Diseño: 1 semana (inventando la rueda)
+</span><span id="__span-12-3"><span class="linenos" data-linenos=" 3 "></span>- Desarrollo: 2 semanas
+</span><span id="__span-12-4"><span class="linenos" data-linenos=" 4 "></span>- Testing: 1 semana
+</span><span id="__span-12-5"><span class="linenos" data-linenos=" 5 "></span>- Total: 4 semanas
+</span><span id="__span-12-6"><span class="linenos" data-linenos=" 6 "></span>
+</span><span id="__span-12-7"><span class="linenos" data-linenos=" 7 "></span>Con patrones:
+</span><span id="__span-12-8"><span class="linenos" data-linenos=" 8 "></span>- Diseño: 1 día (aplicar patrón conocido)
+</span><span id="__span-12-9"><span class="linenos" data-linenos=" 9 "></span>- Desarrollo: 1 semana (código más claro)
+</span><span id="__span-12-10"><span class="linenos" data-linenos="10 "></span>- Testing: 3 días (estructurado)
+</span><span id="__span-12-11"><span class="linenos" data-linenos="11 "></span>- Total: 2 semanas
+</span></code></pre></div>
+<h3 id="36-adaptabilidad-y-escalabilidad">3.6 Adaptabilidad y Escalabilidad<a class="headerlink" href="#36-adaptabilidad-y-escalabilidad" title="Permanent link">&para;</a></h3>
+<p>Los patrones permiten que el software <strong>crezca sin romperse</strong>:</p>
+<ul>
+<li>Factory: Agregar nuevos tipos sin cambiar código existente</li>
+<li>Strategy: Agregar nuevos algoritmos dinámicamente</li>
+<li>Decorator: Agregar funcionalidad sin modificar original</li>
+</ul>
+<h2 id="4-uso-en-la-industria">4. Uso en la Industria<a class="headerlink" href="#4-uso-en-la-industria" title="Permanent link">&para;</a></h2>
+<h3 id="41-software-empresarial">4.1 Software Empresarial<a class="headerlink" href="#41-software-empresarial" title="Permanent link">&para;</a></h3>
+<p><strong><abbr title="Modelo - Vista - Controlador">MVC</abbr> (Model-Vista-Controlador)</strong>:</p>
+<ul>
+<li>Separa lógica de negocio de UI</li>
+<li>Usado en frameworks: Spring, Django, Laravel</li>
+</ul>
+<p><strong>Singleton</strong>: Gestión de conexiones a BD</p>
+<p><strong>Repository</strong>: Acceso a datos desacoplado</p>
+<h3 id="42-software-embebido">4.2 Software Embebido<a class="headerlink" href="#42-software-embebido" title="Permanent link">&para;</a></h3>
+<p><strong>Observer</strong>: Comunicación sin polling continuo</p>
+<p><strong>Facade</strong>: Interfaz simplificada para hardware</p>
+<h3 id="43-videojuegos">4.3 Videojuegos<a class="headerlink" href="#43-videojuegos" title="Permanent link">&para;</a></h3>
+<p><strong>Flyweight</strong>: Reducir memoria de objetos similares (enemigos, árboles)</p>
+<p><strong>Command</strong>: Sistema de undo/redo</p>
+<p><strong>State</strong>: Máquina de estados (idle, correr, saltar)</p>
+<h3 id="44-aplicaciones-moviles">4.4 Aplicaciones Móviles<a class="headerlink" href="#44-aplicaciones-moviles" title="Permanent link">&para;</a></h3>
+<p><strong>Adapter</strong>: Integrar librerías con interfaces diferentes</p>
+<p><strong>Strategy</strong>: Diferentes comportamientos según dispositivo/orientación</p>
+<p><strong>Dependency Injection</strong>: Facilita testing</p>
+<h3 id="45-cloud-y-microservicios">4.5 Cloud y Microservicios<a class="headerlink" href="#45-cloud-y-microservicios" title="Permanent link">&para;</a></h3>
+<p><strong>API Gateway</strong>: Patrón Facade para cluster de servicios</p>
+<p><strong>Circuit Breaker</strong>: Manejar fallos en servicios distribuidos</p>
+<p><strong>Service Locator</strong>: Descubrir servicios dinámicamente</p>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
+        
+          
+          <a href="04_Documentacion_Software.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 04. Documentación">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                04. Documentación
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2025-2026 Ginés López García
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/gineslopez/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/gines-lopez" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://gines-lopez.github.io" target="_blank" rel="noopener" title="gines-lopez.github.io" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64zm32 104c0-13.3 10.7-24 24-24 137 0 248 111 248 248 0 13.3-10.7 24-24 24s-24-10.7-24-24c0-110.5-89.5-200-200-200-13.3 0-24-10.7-24-24m0 96c0-13.3 10.7-24 24-24 83.9 0 152 68.1 152 152 0 13.3-10.7 24-24 24s-24-10.7-24-24c0-57.4-46.6-104-104-104-13.3 0-24-10.7-24-24m0 120a32 32 0 1 1 64 0 32 32 0 1 1-64 0"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/ginesenclase" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M357.2 48h70.6L273.6 224.2 455 464H313L201.7 318.6 74.5 464H3.8l164.9-188.5L-5.2 48h145.6l100.5 132.9zm-24.8 373.8h39.1L119.1 88h-42z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<g.lopezgarcia2@edu.gva.es>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4l208 156a48 48 0 0 0 57.6 0l208-156c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48zM0 196v188c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V196L313.6 344.8c-34.1 25.6-81.1 25.6-115.2 0z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "toc.integrate", "navigation.indexes", "navigation.top", "navigation.tracking", "navigation.footer", "toc.follow", "content.tooltips", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.50899def.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
